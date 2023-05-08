@@ -20,9 +20,11 @@ header{
     display: grid;
     
     grid-template-columns: 0.75fr 1.25fr 3fr;
-    grid-template-rows: auto;
+    grid-template-rows: auto;    
+    
     justify-content: center;
     align-items: center;
+
 
     grid-column-gap: 2px;
 
@@ -45,10 +47,6 @@ footer {
 
 /* HEADER GENERICO*/
 
-.encabezado{
-    color: white;
-}
-
 .encabezado .logo {   
     display: flex;
     justify-content: right;
@@ -56,7 +54,7 @@ footer {
     overflow: hidden;
 }
 
-.encabezado .titulos p{
+.encabezado .titulos{
 
     font-size: 35px;
     color: white;
@@ -69,28 +67,40 @@ footer {
 }
 
 .navegation{
-    position: relative;
+    position: relative;    
     align-items: center;
     text-align: center;
     align-content: center;
     padding: 1px;
+    
+}
+.navegation .menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 75%;
 }
 
-.navegation ul {
+.menu .btnMenu{
+    display: none;
+}
+
+.menu ul {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1px;
 }
 
-.navegation li{
+.menu li{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1px;
 }
 
-.navegation li a {
+.menu li a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,16 +112,70 @@ footer {
     text-decoration: none;
 }
 
-.navegation li a:hover{
+.menu li a:hover{
     color: rgb(7, 84, 185);
 }
 
-.navegation li .BOTON{
+.menu li .BOTON{
     color: green;
 }
 
-.navegation li .BOTON:hover{
+.menu li .BOTON:hover{
     color: wheat;
+}
+
+/* RESPONSIVE HEADER GENERICO */
+@media (max-width: 800px ) {
+
+    header{
+        display: grid;
+        
+        grid-template-columns: 2.5fr 1.5fr 1fr;
+        grid-template-rows: auto
+    }
+
+    .encabezado .logo {   
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    .encabezado .titulos p{    
+        font-size: 15px;
+        color: white;
+        text-align: center;
+    
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .navegation{
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        padding: 1px;
+    }
+    .navegation .menu{
+        display: inline;
+        justify-content: center;
+        align-items: center;
+    
+        height: 90%;
+    }
+
+    .menu .btnMenu{
+        display: inline;
+        background-color:rgb(51, 58, 64);
+    }
+
+    .menu .lista{
+        display: none;
+    }
+    
 }
 
 /* PIE GENERICO */
