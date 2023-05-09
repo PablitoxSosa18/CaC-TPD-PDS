@@ -36,13 +36,19 @@
 
         <nav class="navegation">
 
-            <ul>
-                <li><a href="index.html">La Conferencia</a></li>
-                <li><a href="orator.html">Los Oradores</a></li>
-                <li><a href="place_&_date.html">El lugar y la fecha</a></li>
-                <li> <a href="new_orator.html">Conviértete en Orador</a></li>
-                <li><a class="BOTON"  href="tickets.html">COMPRAR TICKETS</a></li>
-            </ul>
+            <div class="menu">
+
+                <button class="btnMenu"><img id="img" src="MENU.png" alt="Menu"></button>
+
+                <div class="lista">
+                    <a href="index.html">La Conferencia</a>
+                    <a href="orator.html">Los Oradores</a>
+                    <a href="place_&_date.html">El lugar y la fecha</a>
+                    <a href="new_orator.html">Conviértete en Orador</a>
+                    <a class="BOTON" href="tickets.html">COMPRAR TICKETS</a>
+                </div>
+
+            </div>
 
         </nav>
 
@@ -68,7 +74,7 @@
                                         <option value="3">La Rural</option>
                                     </select>
                                 </div>
-                                <div class="col-md-3 columForms">
+                                <div class="row-md-3 columForms">
                                     <select class="custom-select">
                                         <option selected>Fecha</option>
                                         <option value="1">24/5/2023</option>
@@ -79,7 +85,7 @@
                                         <option value="7">01/6/2023</option>
                                     </select>
                                 </div>
-                                <div class="col-md-3 columForms">
+                                <div class="row-md-3 columForms">
                                     <select class="custom-select">
                                         <option selected>Hora</option>
                                         <option value="1">15:30 HS</option>
@@ -118,7 +124,7 @@
                                         <option value="1">Argentina</option>
                                     </select>
                                 </div>
-                                <div class="col-md-3 columForms">
+                                <div class="row-md-3 columForms">
                                     <select class="custom-select">
                                         <option selected>Provincia</option>
                                         <option value="1">CABA</option>
@@ -167,7 +173,7 @@
                                 <div class="col-md-5 columForms">
                                     <input type="number" class="form-control" required maxlength="16" minlength="1" min="0" placeholder="Ingrese Número de Tarjeta"/>
                                 </div>
-                                <div class="col-md-3 columForms">
+                                <div class="row-md-3 columForms">
                                     <select class="custom-select">
                                         <option selected></option>
                                         <option value="1">VISA</option>
@@ -230,10 +236,10 @@
                     </div>
                     <div class="compra-Send">
                         <div class="row justify-content-md-center fileForms">
-                            <div class="col-md-3 pad-adjust">
+                            <div class="row-md-3 pad-adjust">
                                  <input type="submit"  class="btn btn-danger" value="CANCELAR" />
                               </div>
-                              <div class="col-md-3 pad-adjust">
+                              <div class="row-md-3 pad-adjust">
                                   <input type="submit"  class="btn btn-warning btn-block" value="COMPRAR AHORA" />
                               </div>
                           </div>

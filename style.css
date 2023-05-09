@@ -118,7 +118,7 @@ footer {
 }
 
 /* RESPONSIVE HEADER GENERICO */
-@media (max-width: 900px ) {
+@media screen and (max-width: 700px ) {
 
     header{
         display: grid;
@@ -220,51 +220,63 @@ footer {
 
 /* PIE GENERICO */
 
-.pie{
+.menuPieRPSV{
+    display: none;
+}
+
+.menuPieCM{
     width: 80%;
-}
-
-.pie ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 10px;
-    margin: 10px;
-    overflow: hidden;
-}
-
-.pie li{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    height: max-content;
     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie .listaPie {
+    display: flex;
+
     padding: 10px;
     margin: 10px;
 }
 
-.pie li a {
+.listaPie a {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 15px;
 
     color: white;
     text-align: center;
     text-decoration: none;
     
-    padding: 8px;
-    margin: 8px;
+    padding: 1px;
+    margin: 1px;
   }
 
-.pie li a:hover{
+.listaPie a:hover{
     color: rgb(49, 96, 156);
 }
 
-.pie a{
-    padding: 8px;
-    font-size: 18px;
+/* RESPONSIVE PIE GENERICO */
+@media screen and (max-width: 700px ) {
+
+    .menuPieRPSV{
+        display: inline-flex;
+
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        width: 100%;
+        height: max-content;
+    }
+    
+    .menuPieCM{
+        display: none;
+    }
+
 }
 
 /* HTML PRINCIPAL */
