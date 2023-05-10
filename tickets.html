@@ -74,7 +74,7 @@
                                         <option value="3">La Rural</option>
                                     </select>
                                 </div>
-                                <div class="row-md-3 columForms">
+                                <div class="col-md-3 columForms">
                                     <select class="custom-select">
                                         <option selected>Fecha</option>
                                         <option value="1">24/5/2023</option>
@@ -85,7 +85,7 @@
                                         <option value="7">01/6/2023</option>
                                     </select>
                                 </div>
-                                <div class="row-md-3 columForms">
+                                <div class="col-md-3 columForms">
                                     <select class="custom-select">
                                         <option selected>Hora</option>
                                         <option value="1">15:30 HS</option>
@@ -124,7 +124,7 @@
                                         <option value="1">Argentina</option>
                                     </select>
                                 </div>
-                                <div class="row-md-3 columForms">
+                                <div class="col-md-3 columForms">
                                     <select class="custom-select">
                                         <option selected>Provincia</option>
                                         <option value="1">CABA</option>
@@ -173,7 +173,7 @@
                                 <div class="col-md-5 columForms">
                                     <input type="number" class="form-control" required maxlength="16" minlength="1" min="0" placeholder="Ingrese Número de Tarjeta"/>
                                 </div>
-                                <div class="row-md-3 columForms">
+                                <div class="col-md-3 columForms">
                                     <select class="custom-select">
                                         <option selected></option>
                                         <option value="1">VISA</option>
@@ -228,7 +228,10 @@
                                 </div>
                             </div>
                             <div class="row justify-content-md-center fileForms">
-                                <div class="col-md-12 justify-content-md-center pad-adjust columFormsCT">
+                                <div class="col-md-11 columForms">
+                                    <input id="fname" name="name" type="text" placeholder="Nombre que figura la tarjeta" class="form-control">
+                                </div>
+                                <div class="col-md-11 justify-content-md-center pad-adjust columFormsCT">
                                     <input type="checkbox" checked class="text-muted">    ¿Aceptas los <a href="conditions.html">Términos y Condiciones?</a>
                                 </div>
                             </div>
@@ -236,10 +239,10 @@
                     </div>
                     <div class="compra-Send">
                         <div class="row justify-content-md-center fileForms">
-                            <div class="row-md-3 pad-adjust">
+                            <div class="col-md-3 pad-adjust">
                                  <input type="submit"  class="btn btn-danger" value="CANCELAR" />
                               </div>
-                              <div class="row-md-3 pad-adjust">
+                              <div class="col-md-3 pad-adjust">
                                   <input type="submit"  class="btn btn-warning btn-block" value="COMPRAR AHORA" />
                               </div>
                           </div>
@@ -247,22 +250,36 @@
                 </form>
             </fieldset>
         </div>
-        <div class="img-Columns"></div>
+        <div class="img-Columns">
+            <div class="columIMG">
+                <img src="ba5.jpg" alt="">
+            </div>
+            <div class="columIMG">
+                <img src="ba6.jpg" alt="">
+            </div>
+            <div class="columIMG">
+                <img src="ba7.jpg" alt="">
+            </div>
+        </div>
 
     </article>
 
-    <footer>
+    <footer class="piePage">
 
-        <nav class="pie">
-            <ul>
-                <li><a href="questions.html">Preguntas <br> frecuentes</a></li>
-                <li><a href="contact.html">Contáctenos</a></li>
-                <li><a href="press.html">Prensa</a></li>
-                <li><a href="conference.html">Conferencias</a></li>
-                <li><a href="conditions.html">Términos y <br> Condiciones</a></li>
-                <li><a href="privacy.html">Privacidad</a></li>
-                <li><a href="students.html">Estudiantes</a></li>
-            </ul>
+        <nav class="pieP">
+
+            <div class="menuPieCM">
+
+                <div class="listaPie">
+                    <a href="questions.html">Preguntas frecuentes</a>
+                    <a href="contact.html">Contáctenos</a>
+                    <a href="press.html">Prensa</a>
+                    <a href="conference.html">Conferencias</a>
+                    <a href="conditions.html">Términos y Condiciones</a>
+                    <a href="privacy.html">Privacidad</a>
+                    <a href="students.html">Estudiantes</a>
+                </div>
+            </div>
         </nav>
 
     </footer>

@@ -13,7 +13,7 @@ body{
     display: grid;
 
     grid-template-columns: 100%;
-    grid-template-rows: 120px 4fr 100px;
+    grid-template-rows: 120px 4fr 120px;
 }
 
 header{
@@ -33,9 +33,10 @@ header{
 
 footer {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    
     text-align: center;
     background-color: rgb(28, 57, 71);
 }
@@ -54,7 +55,7 @@ footer {
     overflow: hidden;
 }
 
-.encabezado .titulos{
+.encabezado .titulos p{
 
     font-size: 35px;
     color: white;
@@ -75,11 +76,12 @@ footer {
     
 }
 .navegation .menu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
 
-    height: 75%;
+    height: 95%;
+    width: 100%;
 }
 
 .menu .btnMenu{
@@ -88,7 +90,7 @@ footer {
 
 .menu .lista {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 1px;
 }
@@ -118,7 +120,7 @@ footer {
 }
 
 /* RESPONSIVE HEADER GENERICO */
-@media screen and (max-width: 700px ) {
+@media screen and (max-width: 900px ) {
 
     header{
         display: grid;
@@ -138,18 +140,18 @@ footer {
         height: 50%;
     }
     
-    .encabezado .titulos p{    
-        font-size: 18px;
+    .encabezado .titulos p{     
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        overflow: hidden;
+
+        font-size: 15px;
         color: white;
         text-align: center;
 
         width: 50%;
         height: 50%;
-    
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        overflow: hidden;
     }
 
     .navegation{
@@ -220,63 +222,48 @@ footer {
 
 /* PIE GENERICO */
 
-.menuPieRPSV{
-    display: none;
-}
-
-.menuPieCM{
-    width: 80%;
-    height: max-content;
-    
-    display: flex;
-    justify-content: center;
+.pieP{
+    position: relative;    
     align-items: center;
+    text-align: center;
+    align-content: center;
+    padding: 1px;    
 }
 
-.pie .listaPie {
-    display: flex;
+.pieP .menuPieCM{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
 
+    height: 95%;
+    width: 100%;
+}
+
+.menuPieCM .listaPie {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     padding: 10px;
-    margin: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .listaPie a {
-    display: flex;
+    display: inline;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    font-size: 15px;
 
     color: white;
-    text-align: center;
-    text-decoration: none;
-    
+    font-size: 18px;
+
+    height: max-content;
+
     padding: 1px;
-    margin: 1px;
-  }
+    text-decoration: none;
+}
 
 .listaPie a:hover{
     color: rgb(49, 96, 156);
-}
-
-/* RESPONSIVE PIE GENERICO */
-@media screen and (max-width: 700px ) {
-
-    .menuPieRPSV{
-        display: inline-flex;
-
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-
-        width: 100%;
-        height: max-content;
-    }
-    
-    .menuPieCM{
-        display: none;
-    }
-
 }
 
 /* HTML PRINCIPAL */
@@ -786,7 +773,7 @@ footer {
 }
 
 .compra-Date .fileForms{
-    height: 70px;
+    height: 60px;
 }
 
 .compra-Date .columForms{
@@ -813,6 +800,8 @@ footer {
 .compra-Cards .fileForms h2{
     font-size: 25px;
     text-align: center;
+
+    height: max-content;
 }
 
 .compra-Cards .fileForms{
@@ -838,4 +827,46 @@ footer {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+}
+
+.img-Columns{
+    display: grid;
+    grid-template-rows: repeat(3,33.3%);
+}
+
+.img-Columns .columIMG{
+    height: 100%;
+    width: 100%;
+}
+
+/* HTML CONFERENCIAS */
+
+.conference{
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    grid-template-rows: 100%;
+
+    background: linear-gradient(rgb(44, 149, 209), 60%, rgb(28, 57, 71));
+}
+
+.conference .boxCONF{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boxCONF .tituloCONF{
+    height: max-content;
+    font-size: 20px;
+    color: white;
+}
+
+.boxCONF .filaCONF{
+    width: 100%;
+    height: 100%;
+}
+
+.filaCONF .columCONF{
+    align-items: center;
+    justify-content: center;
 }
