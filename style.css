@@ -135,24 +135,29 @@ footer {
         justify-content: right;
         align-items: center;
         overflow: hidden;
+    }
 
-        width: 50%;
-        height: 50%;
+    .logo #img{
+        width: 80%;
+        height: 80%;
     }
     
-    .encabezado .titulos p{     
+    .encabezado .titulos{     
         display: flex;
         justify-content: left;
         align-items: center;
         overflow: hidden;
 
-        font-size: 15px;
+        padding: 1px;
+        margin: 0;
+    }
+
+    .encabezado .titulos p {
+        font-size: 20px;
         color: white;
         text-align: center;
 
-        width: 50%;
-        height: 50%;
-    }
+    } 
 
     .navegation{
         position: relative;
@@ -276,10 +281,35 @@ footer {
     text-align: center;
 
     overflow: hidden;
+
+    margin: 0;
+    padding: 0;
 }
 
 .principal .fondo{
     opacity: 55%;
+    margin: 0;
+    padding: 0;
+}
+
+.fondo .fondoCRS{
+    margin: 0;
+    padding: 0;
+}
+
+.fondoCRS .carousel-inner{
+    margin: 0;
+    padding: 0;
+}
+
+.fondoCRS .boxCRS{
+    margin: 0;
+    padding: 0;
+}
+
+.boxCRS .imgCRS{
+    margin: 0;
+    padding: 0;
 }
 
 .principal h1{
@@ -294,33 +324,39 @@ footer {
 
 .principal .text-center {
     position: absolute;
-    display: inline;
+    display: inline-block;
 
     justify-content: right;
     align-items: center;
     
     width: 50vw;
-    height: 5vh;
+    height: 30vh;
 
     top: 55%;
     left: 70%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -10%);
 }
 
-.principal nav a{
+.text-center .Botones{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
 
+    height: 5vh;
+    width: 100%;
+}
+
+.Botones a{
+    position: relative;
     font-size: 18px;
     color: white;    
     padding: 5px;
     border: 3px;
     text-decoration: none;
-
-    height: 5vh;
-    width: 20vw;
 }
 
 .principal .botonOR{
-
     text-align: center;
     background-color: transparent;
 
@@ -336,7 +372,6 @@ footer {
 }
 
 .principal .botonTI{
-
     text-align: center;
     background-color: green;
 
@@ -350,6 +385,48 @@ footer {
     border-style: solid;
     border-color:whitesmoke;
     color: gray;
+}
+
+@media screen and (max-width: 900px ) {
+
+    .principal .text-center {
+        position: absolute;
+        display: inline;
+
+        justify-content: right;
+        align-items: center;
+        
+        width: 50vw;
+        height: 45vh;
+    
+        top: 55%;
+        left: 70%;
+        transform: translate(-50%, -30%);
+    }
+
+    .text-center .Botones{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+    
+        height: 6vh;
+        width: 100%;
+    }
+    
+    .Botones a{
+        position: relative;
+        text-align: center;
+        align-items: center;
+
+        font-size: 14px;
+        color: white;   
+
+        padding: 2px;
+        border: 3px;
+        text-decoration: none;
+    }
+
 }
 
 /* HTML ORADOR */
