@@ -243,7 +243,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     flex-direction: row;
     flex-wrap: wrap;
 }
@@ -731,7 +731,7 @@ footer {
 .price{
     display: grid;
     grid-template-rows: 100%;
-    grid-template-columns: 45% 45%;
+    grid-template-columns: 75% 20%;
     
 
     justify-content: center;
@@ -749,40 +749,44 @@ footer {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+
+.price .img-Columns{
+    display: grid;
+    grid-template-rows: repeat(3,33.3%);
 }
 
 .campo-Gral .compra-Place{    
     height: 100%;
+
+    margin: 0;
+    padding: 1px;
 }
 
-.compra-Place .fileForms{
-    height: 70px;
-}
-
-.compra-Place .columForms{
+.campo-Gral .fileForms{
     height: 40px;
+
+    margin: 0;
+    padding: 1px;
 }
 
-.compra-Place .fileForms h2{
+.campo-Gral .columForms{
+    height: 40px;
+
+    margin: 0;
+    padding: 1px;
+}
+
+.campo-Gral .fileForms h2{
     font-size: 25px;
     text-align: center;
 }
 
 .campo-Gral .compra-Date{    
     height: 100%;
-}
-
-.compra-Date .fileForms{
-    height: 60px;
-}
-
-.compra-Date .columForms{
-    height: 40px;
-}
-
-.compra-Date .fileForms h2{
-    font-size: 25px;
-    text-align: center;
 }
 
 .compra-Date .campoDatos{
@@ -793,50 +797,14 @@ footer {
     border-style: double;
 }
 
-.campo-Gral .compra-Cards{
-    height: 100%;
-}
-
-.compra-Cards .fileForms h2{
-    font-size: 25px;
-    text-align: center;
-
-    height: max-content;
-}
-
-.compra-Cards .fileForms{
-    height: 70px;
-}
-
-.compra-Cards .fileForms .columForms{
-    height: 40px;
-}
-
-.compra-Cards .fileForms .columFormsCT{
-    height: max-content;
-    text-align: center;
-    
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.columForms .legenT{
-    font-size: 32px;
-    
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.img-Columns{
-    display: grid;
-    grid-template-rows: repeat(3,33.3%);
-}
-
 .img-Columns .columIMG{
     height: 100%;
     width: 100%;
+
+    overflow: hidden;
+
+    margin: 0;
+    padding: 1px;
 }
 
 /* HTML CONFERENCIAS */
@@ -846,7 +814,7 @@ footer {
     grid-template-columns: 3fr 3fr;
     grid-template-rows: 100%;
 
-    background: linear-gradient(rgb(44, 149, 209), 60%, rgb(28, 57, 71));
+    background: linear-gradient(to right, rgb(53, 56, 74), 60%, rgb(38, 67, 51));
 }
 
 .conference .boxCONF{
