@@ -913,7 +913,7 @@ footer {
         display: grid;
     
         grid-template-columns: 100%;
-        grid-template-rows: 70% 15% 15%;
+        grid-template-rows: 80% 10% 10%;
         
         align-items: center;
         justify-content: center;
