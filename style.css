@@ -920,20 +920,24 @@ footer {
         text-align: center;
     }
 
+    .fieldContact .fileForms{
+        height: 40px;
+    }
+
     .fieldContact .fileForms-TELS{
         height: 100px;
     }
 
     .fileForms-TELS .columForms-TEL{
-        height: 50px;
+        height: 40px;
     }
 
     .fileForms-TELS .bigIcon{
-        height: 50px;
+        height: 40px;
     }
 
     .fieldContact .fileFormsArea{
-        height: 100px;
+        height: 80px;
     }
 
     .contacts .phones-Contact{
@@ -974,9 +978,7 @@ footer {
     
     .wpb_wrapper > p{
         display: none;
-    }
-
-    
+    }   
 
 }
 
