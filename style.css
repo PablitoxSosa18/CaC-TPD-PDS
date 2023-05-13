@@ -575,7 +575,7 @@ footer {
 /* HTML LUGAR Y DATOS*/
 
 .place{
-    background-color: white;
+    background-color:rgb(97, 120, 139);
     color: white;
 
     display: grid;
@@ -593,22 +593,11 @@ footer {
 }
 
 .place .columns-IMG{
-    overflow: hidden;
-
+    overflow: visible;
+    display: flex;
+    justify-content: center;
     align-items: center;
     align-content: center;
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
-.columns-IMG .padIMG{
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
-.padIMG .pdateIMG{
     margin: 0;
     padding: 0;
     border: 0;
@@ -617,8 +606,6 @@ footer {
 .place .columns-TXT{
     display: inline;
     text-align: justify;
-
-    background-color:rgb(97, 120, 139);
 
     margin: 0;
     padding: 0;
@@ -819,6 +806,25 @@ footer {
     height: max-content;
 }
 
+@media screen and (max-width: 900px ) {
+
+    .new-orator {
+        background-color: white;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    
+        display: grid;
+        grid-template-rows: 15% 85%;
+        grid-template-columns: 80%;
+    }
+
+    .f-4 .form-control-file{
+        font-size: 12px;
+    }
+
+}
+
 /* HTML CONTACTOS */
 
 .contacts{
@@ -844,6 +850,10 @@ footer {
 }
 
 .fieldContact .fileForms{
+    height: 50px;
+}
+
+.fieldContact .fileForms-TELS{
     height: 50px;
 }
 
@@ -894,6 +904,80 @@ footer {
     height: max-content;
     padding: 1px;
     margin: 1px;
+}
+
+@media screen and (max-width: 900px ) {
+
+    .contacts{
+        background-color: white;
+        display: grid;
+    
+        grid-template-columns: 100%;
+        grid-template-rows: 70% 15% 15%;
+        
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .fieldContact .fileForms-TELS{
+        height: 100px;
+    }
+
+    .fileForms-TELS .columForms-TEL{
+        height: 50px;
+    }
+
+    .fileForms-TELS .bigIcon{
+        height: 50px;
+    }
+
+    .fieldContact .fileFormsArea{
+        height: 100px;
+    }
+
+    .contacts .phones-Contact{
+        background-color: whitesmoke;
+        height: max-content;
+        width: auto;
+    
+        display: flex;
+    
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    
+        padding: 1px;
+        margin: 1px;
+    
+        font-size: 12px;
+    }
+
+    .tittle-Contact > p{
+        height: max-content;
+        padding: 1px;
+        margin: 1px;
+        overflow: hidden;
+    }
+
+    .phones-Contact .wpb_wrapper{
+        height: max-content;
+        display: inline;
+    
+        padding: 1px;
+        margin: 1px;
+    
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    .wpb_wrapper > p{
+        display: none;
+    }
+
+    
+
 }
 
 /* HTML TICKETS */
@@ -1007,4 +1091,17 @@ footer {
 .filaCONF .columCONF{
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (max-width: 900px ) {
+
+    .conference{
+        display: grid;
+        grid-template-rows: 3fr 3fr;
+        grid-template-columns: 100%;
+    
+        background: linear-gradient(to left, rgb(53, 56, 74), 60%, rgb(38, 67, 51));
+    }
+
+    
 }
