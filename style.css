@@ -925,7 +925,7 @@ footer {
     }
 
     .fieldContact .fileForms-TELS{
-        height: 100px;
+        height: 80px;
     }
 
     .fileForms-TELS .columForms-TEL{
@@ -937,7 +937,8 @@ footer {
     }
 
     .fieldContact .fileFormsArea{
-        height: 80px;
+        height: 75px;
+        font-size: 12px;
     }
 
     .contacts .phones-Contact{
@@ -956,6 +957,14 @@ footer {
     
         font-size: 12px;
     }
+
+    .contacts .btn-primary{
+        height: max-content;
+        padding: 1px;
+        margin: 1px;
+        font-size: 14px;
+    }
+
 
     .tittle-Contact > p{
         height: max-content;
