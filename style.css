@@ -329,7 +329,7 @@ footer {
     justify-content: right;
     align-items: center;
     
-    width: 50vw;
+    width: 600px;
     height: 30vh;
 
     top: 55%;
@@ -340,7 +340,7 @@ footer {
 .text-center .Botones{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     position: absolute;
 
     height: 5vh;
@@ -396,12 +396,12 @@ footer {
         justify-content: right;
         align-items: center;
         
-        width: 50vw;
+        width: 20rem;
         height: 45vh;
     
         top: 55%;
         left: 70%;
-        transform: translate(-50%, -30%);
+        transform: translate(-66%, -30%);
     }
 
     .text-center .Botones{
@@ -410,7 +410,7 @@ footer {
         justify-content: space-between;
         position: absolute;
     
-        height: 6vh;
+        height: 4vh;
         width: 100%;
     }
     
@@ -504,6 +504,74 @@ footer {
     border-radius: 6px;
 }
 
+@media screen and (max-width: 900px ) {
+
+    .orador {
+        background-color: white;
+        display: inline-block;
+
+        margin: 0;
+        padding: 0;
+
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        overflow: scroll;
+    }
+
+    .orador p{
+        font-size: 12px;
+        height: max-content;
+    }
+    
+    .orador h2{
+        font-size: 18px;
+        height: max-content;
+        text-align: center;
+    }
+    
+    .orador .box-Tittle{
+        display: inline;
+        text-align: center;
+    }
+
+    .orador .box-OR-1{
+        display: none;
+    }
+
+    .orador .box-OR-2{
+        height: max-content;
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .orador .box-OR-3{
+        height: max-content;
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .orador .box-OR-4{
+        height: max-content;
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .orador .box-OR-5{
+        display: none;
+    }
+}
+
 /* HTML LUGAR Y DATOS*/
 
 .place{
@@ -519,33 +587,58 @@ footer {
 
     border-color: white;
     border-style: solid;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 .place .columns-IMG{
-    overflow: visible;
+    overflow: hidden;
 
     align-items: center;
     align-content: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.columns-IMG .padIMG{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.padIMG .pdateIMG{
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 .place .columns-TXT{
     display: inline;
     text-align: justify;
 
-    background-color:rgb(51, 58, 64);
+    background-color:rgb(97, 120, 139);
 
-    border: 10px;
-    padding: 15px;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 .columns-TXT h2{
     font-family: 18px;
     height: max-content;
+
+    border: 10px;
+    padding: 15px;
 }
 
 .columns-TXT p{
     font-family: 16px;
     height: max-content;    
+
+    border: 10px;
+    padding: 15px;
 }
 
 .columns-TXT .txt-BTN{
@@ -808,7 +901,7 @@ footer {
 .price{
     display: grid;
     grid-template-rows: 100%;
-    grid-template-columns: 75% 20%;
+    grid-template-columns: 65% 30%;
     
 
     justify-content: center;
