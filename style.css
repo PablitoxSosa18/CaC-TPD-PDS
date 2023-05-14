@@ -732,23 +732,28 @@ footer {
 
 .pregunta {
     background-color: white;
+    display: block;
     
     align-items: center;
     justify-content: center;
     text-align: center;
 
     height: max-content;
+    width: 100%;
 }
 .pregunta p{
     text-align: justify;
 }
 
 .pregunta .answers{
-    width: 90%;
+    width: 95%;
+    display: inline-flex;
 
     justify-content: left;
-    align-items: center;
+    align-items: start;
     overflow: hidden;
+
+    flex-direction: column;
 }
 
 .pregunta .bt-q{
@@ -913,7 +918,7 @@ footer {
         display: grid;
     
         grid-template-columns: 100%;
-        grid-template-rows: 80% 10% 10%;
+        grid-template-rows: 65% 20% 15%;
         
         align-items: center;
         justify-content: center;
@@ -921,23 +926,23 @@ footer {
     }
 
     .fieldContact .fileForms{
-        height: 40px;
+        height: 45px;
     }
 
     .fieldContact .fileForms-TELS{
-        height: 80px;
+        height: 100px;
     }
 
     .fileForms-TELS .columForms-TEL{
-        height: 40px;
+        height: 45px;
     }
 
     .fileForms-TELS .bigIcon{
-        height: 40px;
+        height: 45px;
     }
 
     .fieldContact .fileFormsArea{
-        height: 75px;
+        height: 85px;
         font-size: 12px;
     }
 
@@ -996,7 +1001,7 @@ footer {
 .price{
     display: grid;
     grid-template-rows: 100%;
-    grid-template-columns: 65% 30%;
+    grid-template-columns: 65% 35%;
     
 
     justify-content: center;
@@ -1007,7 +1012,7 @@ footer {
 .campoView .campo-Gral{
     display: grid;
     grid-template-rows: 15% 40% 35% 10%;
-    grid-template-columns: 90%;
+    grid-template-columns: 100%;
 
     background-color: silver;
     
@@ -1015,61 +1020,143 @@ footer {
     align-items: center;
     overflow: hidden;
 
-    margin: 0;
-    padding: 0;
-}
-
-.price .img-Columns{
-    display: grid;
-    grid-template-rows: repeat(3,33.3%);
+    margin: 0px;
+    padding: 0px;
 }
 
 .campo-Gral .compra-Place{    
     height: 100%;
 
-    margin: 0;
+    margin: 1px;
     padding: 1px;
 }
 
 .campo-Gral .fileForms{
     height: 40px;
 
-    margin: 0;
+    margin: 1px;
     padding: 1px;
 }
 
 .campo-Gral .columForms{
     height: 40px;
 
-    margin: 0;
+    margin: 1px;
     padding: 1px;
 }
 
 .campo-Gral .fileForms h2{
     font-size: 25px;
     text-align: center;
+
+    margin: 1px;
+    padding: 1px;
 }
 
 .campo-Gral .compra-Date{    
     height: 100%;
+
+    margin: 1px;
+    padding: 1px;
 }
 
 .compra-Date .campoDatos{
     background-color: aquamarine;
     border: 5px;
-    padding: 10px;
+
+    margin: 1px;
+    padding: 1px;
     border-radius: 5px;
     border-style: double;
 }
 
-.img-Columns .columIMG{
-    height: 100%;
-    width: 100%;
-
-    overflow: hidden;
+.price .img-Columns{
+    display: grid;
+    grid-template-rows: repeat(2,50%);
+    grid-template-columns: repeat(2,50%);
 
     margin: 0;
-    padding: 1px;
+    padding: 0;
+}
+
+.img-Columns .columIMG{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 900px ) {
+
+    .price{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 85% auto;
+        
+        justify-content: center;
+        align-items: center;
+    }
+
+    .price .img-Columns{
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: repeat(4,25%);
+    
+        margin: 0;
+        padding: 0;
+    }
+
+    .campoView .campo-Gral{
+        display: grid;
+        grid-template-rows: 20% 40% 30% 10%;
+        grid-template-columns: 100%;
+    
+        background-color: silver;
+        
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .campo-Gral .fileForms{
+        height: 30px;
+    
+        margin: 1px;
+        padding: 1px;
+    }
+    
+    .campo-Gral .columForms{
+        height: 30px;
+    
+        margin: 1px;
+        padding: 1px;
+    }
+    
+    .img-Columns .columIMG{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        width: 100%;
+        height: 25%;
+        transition: transform 1.2s; 
+    }
+     
+    .columIMG:hover {
+        transform: translate(0, -180%);
+    }
+    
 }
 
 /* HTML CONFERENCIAS */
