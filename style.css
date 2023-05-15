@@ -868,6 +868,27 @@ footer {
 .contacts .redes-Contact{
     background-color: lightblue;
     height: max-content;
+
+    display: flex;
+    display: flex;
+
+    padding: 0;
+    margin: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+.redes-Contact .btnREDES{
+    display: flex;
+
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+
+    height: 50%;
+    width: 50%;
+
 }
 
 .contacts .phones-Contact{
@@ -1247,4 +1268,22 @@ footer {
     background-clip: initial;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 900px ) {
+
+    .tittle-EST h1{        
+        font-size: 30px;
+    }
+    
+    .subTittle-EST h2 {        
+        font-size: 22px;
+        height: 50%;
+    }
+    
+    .subTittle-EST {        
+        font-size: 18px;
+        height: 50%;
+    }
+
 }
