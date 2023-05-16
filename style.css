@@ -1044,40 +1044,51 @@ footer {
     padding: 0px;
 }
 
-.campo-Gral .compra-Place{    
+.campo-Gral .compra-Place{  
+    
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
     height: 100%;
 
-    margin: 1px;
-    padding: 1px;
+    margin: 0;
+    padding: 0;
 }
 
 .campo-Gral .fileForms{
-    height: 40px;
+    height: 30px;
 
-    margin: 1px;
-    padding: 1px;
+    margin: 0;
+    padding: 0;
 }
 
 .campo-Gral .columForms{
-    height: 40px;
+    height: 30px;
 
-    margin: 1px;
-    padding: 1px;
+    margin: 0;
+    padding: 0;
 }
 
 .campo-Gral .fileForms h2{
     font-size: 25px;
     text-align: center;
 
-    margin: 1px;
-    padding: 1px;
+    margin: 0;
+    padding: 0;
 }
 
-.campo-Gral .compra-Date{    
+.campo-Gral .compra-Date{ 
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+   
     height: 100%;
 
-    margin: 1px;
-    padding: 1px;
+    margin: 0;
+    padding: 0;
 }
 
 .compra-Date .campoDatos{
