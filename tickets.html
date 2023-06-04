@@ -63,9 +63,17 @@
                         <fieldset class="campoFecha">        
                             <div class="row justify-content-md-center fileForms">
                                 <h2>Lugar y Fecha</h2>
-                            </div>    
+                            </div>      
                             <div class="row form-group justify-content-md-center fileForms">
-                                <div class="col-md-5 col-11 columForms">
+                                <div class="col-md-5 col-5 columForms">
+                                    <P>Entrada para Adultos es: $500</P>
+                                </div>
+                                <div class="col-md-5 col-5 columForms">
+                                    <P>Entrada para Menores es: $300</P>
+                                </div>
+                            </div>  
+                            <div class="row form-group justify-content-md-center fileForms">
+                                <div class="col-md-5 col-6 columForms">
                                     <select class="custom-select">
                                         <option selected>Selecciona Lugar de Conferencia</option>
                                         <option value="1">Usina del Arte</option>
@@ -74,7 +82,7 @@
                                         <option value="3">La Rural</option>
                                     </select>
                                 </div>
-                                <div class="col-md-2 col-4 columForms">
+                                <div class="col-md-3 col-3 columForms">
                                     <select class="custom-select">
                                         <option selected>Fecha</option>
                                         <option value="1">04/06/2023</option>
@@ -85,7 +93,7 @@
                                         <option value="7">14/06/2023</option>
                                     </select>
                                 </div>
-                                <div class="col-md-2 col-3 columForms">
+                                <div class="col-md-3 col-1 columForms">
                                     <select class="custom-select">
                                         <option selected>Hora</option>
                                         <option value="1">15:30 HS</option>
@@ -94,14 +102,13 @@
                                         <option value="4">21:30 HS</option>
                                     </select>
                                 </div>
-                                <div class="col-md-2 col-2 columForms">
-                                    <select class="custom-select">
-                                        <option selected>Cantidad</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                    </select>
+                            </div>    
+                            <div class="row form-group justify-content-md-center fileForms">
+                                <div class="col-md-4 col-4 columForms">
+                                    <input id="numer" type="number" max="10" placeholder="ADULTO(S)" class="form-control">
+                                </div>
+                                <div class="col-md-4 col-4 columForms">
+                                    <input id="numer" type="number" max="10" placeholder="MENOR(ES)" class="form-control">
                                 </div>
                             </div>
                         </fieldset>
@@ -130,7 +137,7 @@
                                         <option value="1">Argentina</option>
                                     </select>
                                 </div>
-                                <div class="col-md-3 col-4 columForms">
+                                <div class="col-md-3 col-5 columForms">
                                     <select class="custom-select" placeholder="SSS">
                                         <option selected>Provincia</option>
                                         <option value="1">CABA</option>
@@ -158,14 +165,14 @@
                                         <option value="23">Tucumán</option>
                                     </select>
                                 </div>
+                                <div class="col-md-3 col-3 columForms">
+                                    <input type="number" class="form-control" id="zip_id" name="Código Postal" placeholder="#####">
+                                </div>
                                 <div class="col-md-6 col-6 columForms">
                                     <input id="city_id" name="city_id" type="city_id" placeholder="Ciudad/Barrio(CABA)" class="form-control">
                                 </div>
                                 <div class="col-md-5 col-5 columForms">
                                     <input type="text" class="form-control" id="street2_id" name="street" placeholder="Calle, Altura, Manzana, Edificio, Piso, etc.">
-                                </div>
-                                <div class="col-md-2 col-2 columForms">
-                                    <input type="number" class="form-control" id="zip_id" name="Código Postal" placeholder="#####">
                                 </div>
                             </div>    
                         </fieldset> 
@@ -177,7 +184,7 @@
                             </div>
                             <div class="row justify-content-md-center fileForms">
                                 <div class="col-md-7 col-7 columForms">
-                                    <input type="number" class="form-control" required maxlength="16" minlength="1" min="0" placeholder="Ingrese Número de Tarjeta"/>
+                                    <input id="" type="number" class="form-control" maxlength="16" minlength="1" placeholder="Ingrese Número de Tarjeta"/>
                                 </div>
                                 <div class="col-md-4 col-4 columForms">
                                     <select class="custom-select">
@@ -254,6 +261,10 @@
                     </div>
                 </form>
             </fieldset>
+
+            <!-- ADJUNTO JS-->
+            <script src="main.js"></script>
+            
         </div>
         <div class="img-Columns">
             <div class="columIMG">
