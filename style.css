@@ -1056,6 +1056,11 @@ footer {
     padding: 0;
 }
 
+.compra-Place .entradas{
+    text-decoration: none;
+    font-size: 20px;
+}
+
 .campo-Gral .fileForms{
     height: 30px;
 
@@ -1171,6 +1176,11 @@ footer {
     
         margin: 1px;
         padding: 1px;
+    }
+
+    .compra-Place .entradas{
+        text-decoration: none;
+        font-size: 18px;
     }
     
     .img-Columns .columIMG{
