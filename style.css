@@ -1308,3 +1308,19 @@ footer {
     }
 
 }
+
+/* HTML POPUP*/
+
+.popUP-E-P{
+    display: inline;
+    color: white;
+    text-align: justify;
+}
+
+.popUP-E-P .valorEntradas{
+    height: max-content;
+}
+
+.popUP-E-P .Promociones{
+    height: max-content;
+}

@@ -71,7 +71,7 @@
                             </div>  
                             <div class="row form-group justify-content-md-center fileForms">
                                 <div class="col-md-4 col-4 columForms">
-                                    <select class="custom-select" id="selectUB">
+                                    <select class="custom-select" required id="lugar">
                                         <option selected>---Seleccione---</option>
                                         <option value="1">Usina del Arte</option>
                                         <option value="2">Teatro Colon</option>
@@ -80,7 +80,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3 col-3 columForms">
-                                    <select class="custom-select">
+                                    <select class="custom-select" required>
                                         <option selected>---Fecha---</option>
                                         <option value="1">04/06/2023</option>
                                         <option value="2">06/06/2023</option>
@@ -91,7 +91,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3 col-3 columForms">
-                                    <select class="custom-select">
+                                    <select class="custom-select" required>
                                         <option selected>---Hora---</option>
                                         <option value="1">15:30 HS</option>
                                         <option value="2">17:30 HS</option>
@@ -102,16 +102,16 @@
                             </div>    
                             <div class="row form-group justify-content-md-center fileForms">
                                 <div class="col-md-2 col-2 columForms">
-                                    <input id="numer" type="number" max="10" min="1" placeholder="ADULTO(S)" class="form-control">
+                                    <input id="entradaALD" type="number" required max="10" min="1" placeholder="ADULTO(S)" class="form-control">
                                 </div>
                                 <div class="col-md-3 col-3 columForms">
-                                    <p class="fontTOTAL" id="totalGastoALD">Total: $</p>
+                                    <p class="fontTOTAL" id="totalALD">Total: $</p>
                                 </div>
                                 <div class="col-md-2 col-2 columForms">
-                                    <input id="numer" type="number" max="10" min="1" placeholder="MENOR(ES)" class="form-control">
+                                    <input id="entradaMEN" type="number" required max="10" min="0" placeholder="MENOR(ES)" class="form-control">
                                 </div>
                                 <div class="col-md-3 col-3 columForms">
-                                    <p class="fontTOTAL" id="totalGastoMEN">Total: $</p>
+                                    <p class="fontTOTAL" id="totalMEN">Total: $</p>
                                 </div>
                             </div>
                         </fieldset>
@@ -123,16 +123,16 @@
                             </div>    
                             <div class="row form-group justify-content-md-center fileForms">
                                 <div class="col-md-6 col-6 columForms">
-                                    <input id="fname" name="name" type="text" placeholder="Nombre(s)" class="form-control">
+                                    <input id="fname" name="name" type="text" required placeholder="Nombre(s)" class="form-control">
                                 </div>
                                 <div class="col-md-5 col-5 columForms">
-                                    <input id="fname" name="name" type="text" placeholder="Apellido(s)" class="form-control">
+                                    <input id="fname" name="name" type="text" required placeholder="Apellido(s)" class="form-control">
                                 </div>
                                 <div class="col-md-6 col-6 columForms">
-                                    <input id="email" name="email" type="text" placeholder="Correo Electrónico" class="form-control">
+                                    <input id="email" name="email" type="text" required placeholder="Correo Electrónico" class="form-control">
                                 </div>
                                 <div class="col-md-5 col-5 columForms">
-                                    <input id="phone" name="phone" type="text" placeholder="Teléfono de línea/Celular" class="form-control">
+                                    <input id="phone" name="phone" type="text" required placeholder="Teléfono de línea/Celular" class="form-control">
                                 </div>
                                 <div class="col-md-2 col-3 columForms">
                                     <select class="custom-select">
@@ -141,7 +141,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3 col-5 columForms">
-                                    <select class="custom-select" placeholder="SSS">
+                                    <select class="custom-select" required>
                                         <option selected>---Provincia---</option>
                                         <option value="1">CABA</option>
                                         <option value="2">Buenos Aires</option>
@@ -168,14 +168,14 @@
                                         <option value="23">Tucumán</option>
                                     </select>
                                 </div>
-                                <div class="col-md-3 col-3 columForms">
-                                    <input type="number" class="form-control" id="zip_id" name="Código Postal" placeholder="#####">
+                                <div class="col-md-2 col-3 columForms">
+                                    <input type="number" class="form-control" required id="zip_id" name="Código Postal" placeholder="#####">
                                 </div>
                                 <div class="col-md-6 col-6 columForms">
-                                    <input id="city_id" name="city_id" type="city_id" placeholder="Ciudad/Barrio(CABA)" class="form-control">
+                                    <input name="city_id" type="city_id" required placeholder="Ciudad/Barrio(CABA)" class="form-control">
                                 </div>
                                 <div class="col-md-5 col-5 columForms">
-                                    <input type="text" class="form-control" id="street2_id" name="street" placeholder="Calle, Altura, Manzana, Edificio, Piso, etc.">
+                                    <input type="text" class="form-control" required name="street" placeholder="Calle, Altura, Manzana, Edificio, Piso, etc.">
                                 </div>
                             </div>    
                         </fieldset> 
@@ -187,10 +187,10 @@
                             </div>
                             <div class="row justify-content-md-center fileForms">
                                 <div class="col-md-7 col-7 columForms">
-                                    <input id="" type="number" class="form-control" maxlength="16" minlength="1" placeholder="Ingrese Número de Tarjeta"/>
+                                    <input type="number" class="form-control" required maxlength="16" minlength="1" placeholder="Ingrese Número de Tarjeta"/>
                                 </div>
                                 <div class="col-md-4 col-4 columForms">
-                                    <select class="custom-select">
+                                    <select class="custom-select" required id="tarjeta">
                                         <option selected></option>
                                         <option value="1">VISA</option>
                                         <option value="2">MASTERCARD</option>
@@ -200,8 +200,8 @@
                             </div>
                             <div class="row justify-content-md-center fileForms">
                                 <div class="col-md-2 col-2 columForms">
-                                    <select class="custom-select">
-                                        <option selected>--MES--</option>
+                                    <select class="custom-select" required>
+                                        <option selected>---MES---</option>
                                         <option value="1">01</option>
                                         <option value="2">02</option>
                                         <option value="3">03</option>
@@ -217,7 +217,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-2 col-2 columForms">
-                                    <select class="custom-select">
+                                    <select class="custom-select" required>
                                         <option selected>--AÑO--</option>
                                         <option value="1">2023</option>
                                         <option value="2">2024</option>
@@ -231,20 +231,30 @@
                                         <option value="10">2032</option>
                                     </select>
                                 </div>
-                                <div class="col-md-3 col-3 columForms">
-                                    <input inputmode="numeric" type="password" class="form-control" maxlength="3" min="0" max="999" placeholder="CCV">
+                                <div class="col-md-2 col-2 columForms">
+                                    <input type="password" required class="form-control" maxlength="3" min="0" max="999" placeholder="CCV">
                                 </div>
                                 <div class="col-md-3 col-3 form-check columForms">
-                                    <select class="custom-select">
-                                        <option selected>TIPO</option>
-                                        <option value="1">Crédito</option>
-                                        <option value="2">Debito</option>
+                                    <select class="custom-select" required id="tipo">
+                                        <option selected>---TIPO---</option>
+                                        <option value="1">Debito</option>
+                                        <option value="2">Credito</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2 col-2 form-check columForms">
+                                    <select class="custom-select" required id="pago">
+                                        <option selected>---PAGO---</option>
+                                        <option value="1">UN PAGO</option>
+                                        <option value="2">3 CUOTAS</option>
+                                        <option value="3">6 CUOTAS</option>
+                                        <option value="4">9 CUOTAS</option>
+                                        <option value="5">12 CUOTAS</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="row justify-content-md-center fileForms">
                                 <div class="col-md-11 col-11 columForms">
-                                    <input id="fname" name="name" type="text" placeholder="Nombre que figura la tarjeta" class="form-control">
+                                    <input id="fname" name="name" type="text" required placeholder="Nombre que figura la tarjeta" class="form-control">
                                 </div>
                                 <div class="col-md-11 col-11 justify-content-md-center pad-adjust columFormsCT">
                                     <input type="checkbox" checked class="text-muted">    ¿Aceptas los <a href="conditions.html">Términos y Condiciones?</a>
