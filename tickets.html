@@ -123,16 +123,16 @@
                             </div>    
                             <div class="row form-group justify-content-md-center fileForms">
                                 <div class="col-md-6 col-6 columForms">
-                                    <input id="fname" name="name" type="text" required placeholder="Nombre(s)" class="form-control">
+                                    <input name="name" type="text" required placeholder="Nombre(s)" class="form-control">
                                 </div>
                                 <div class="col-md-5 col-5 columForms">
-                                    <input id="fname" name="name" type="text" required placeholder="Apellido(s)" class="form-control">
+                                    <input name="name" type="text" required placeholder="Apellido(s)" class="form-control">
                                 </div>
                                 <div class="col-md-6 col-6 columForms">
-                                    <input id="email" name="email" type="text" required placeholder="Correo Electrónico" class="form-control">
+                                    <input name="email" type="text" required placeholder="Correo Electrónico" class="form-control">
                                 </div>
                                 <div class="col-md-5 col-5 columForms">
-                                    <input id="phone" name="phone" type="text" required placeholder="Teléfono de línea/Celular" class="form-control">
+                                    <input name="phone" type="text" required placeholder="Teléfono de línea/Celular" class="form-control">
                                 </div>
                                 <div class="col-md-2 col-3 columForms">
                                     <select class="custom-select">
@@ -254,7 +254,7 @@
                             </div>
                             <div class="row justify-content-md-center fileForms">
                                 <div class="col-md-11 col-11 columForms">
-                                    <input id="fname" name="name" type="text" required placeholder="Nombre que figura la tarjeta" class="form-control">
+                                    <input name="name" type="text" required placeholder="Nombre que figura la tarjeta" class="form-control">
                                 </div>
                                 <div class="col-md-11 col-11 justify-content-md-center pad-adjust columFormsCT">
                                     <input type="checkbox" checked class="text-muted">    ¿Aceptas los <a href="conditions.html">Términos y Condiciones?</a>
@@ -264,13 +264,10 @@
                     </div>
                     <div class="compra-Send">
                         <div class="row justify-content-md-center fileForms">
-                            <div class="col-md-3 col-5 pad-adjust">
-                                 <input type="submit"  class="btn btn-danger" value="CANCELAR" />
-                              </div>
-                              <div class="col-md-3 col-5 pad-adjust">
-                                  <input type="submit"  class="btn btn-warning btn-block" value="COMPRAR AHORA" />
-                              </div>
-                          </div>
+                            <div class="col-md-3 col-3 pad-adjust">
+                                <button class="btnRESUMEN" onclick="javascript:popUp('resumen.html')">Resumen</button>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </fieldset>

@@ -1,19 +1,17 @@
+///Controlo el tiempo del corrusel
+
 $('.carousel').carousel({
     interval: 2500
    }
 ) 
 
-function openPopup() {
-    document.getElementById("miPopup").style.display = "block";
-}
-  
-function closePopup() {
-    document.getElementById("miPopup").style.display = "none";
-}
+///Para abrir un popup
 
 function popUp(URL) {
     window.open(URL, 'Nombre de la ventana', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=1,width=350,height=500,left = 30,top = 50');
 }
+// Inicializo las variables
+let master, visa, american, debito, usina1, usina2, teatro, movistar, rural, tresCuota, seisCuota, nueveDuota, doceCuota, menor, adulto; 
 
 ///Defino valores de las entradas
 
@@ -22,23 +20,45 @@ const entradaMEN = 500;
 
 ///Defino valores de los descuentos de las tarjetas
 
-let master = 0.85;
-let visa = 0.90;
-let american = 0.75;
-let debito = 0.60;
+master = 0.85;
+visa = 0.90;
+american = 0.75;
+debito = 0.60;
 
 ///Defino valores de los descuentos de las tarjetas
 
-let usina1 = 0.90;
-let usina2 = 0.85;
-let teatro = 0.90;
-let movistar = 0.95;
-let rural = 0.90;
+usina1 = 0.90;
+usina2 = 0.85;
+teatro = 0.90;
+movistar = 0.95;
+rural = 0.90;
 
 ///Defino valores de los recargos
 
-let tresCuota = 1.15;
-let seisCuota = 1.18;
-let nueveDuota = 1.21;
-let doceCuota = 1.24;
-let IVA = 1.21;
+tresCuota = 1.15;
+seisCuota = 1.18;
+nueveDuota = 1.21;
+doceCuota = 1.24;
+iva = 1.21;
+
+///Defino los campos
+
+const cantALD = document.querySelector('#entradaALD'); 
+const cantMEN = document.querySelector('#entradaMEN');
+const lugar = document.querySelector('#lugar');
+const card = document.querySelector('#tarjeta');
+const cardTipo = document.querySelector('#tipo');
+const cardPago = document.querySelector('#pago');
+const totalALD = document.querySelector('#totalALD');
+const totalMEN = document.querySelector('#totalMEN');
+const resumen = document.querySelector('#resumen');
+adulto = parseInt(cantALD.value);
+menor = parseInt(cantMEN.value);
+
+///Funciones
+
+function totalPagar() {
+    let tickALD, tickMEN;
+    
+
+}
