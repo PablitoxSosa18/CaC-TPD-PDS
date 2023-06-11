@@ -10,13 +10,15 @@ $('.carousel').carousel({
 function popUp(URL) {
     window.open(URL, 'Nombre de la ventana', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=1,width=350,height=500,left = 30,top = 50');
 }
+
 // Inicializo las variables
-let master, visa, american, debito, usina1, usina2, teatro, movistar, rural, tresCuota, seisCuota, nueveDuota, doceCuota, menor, adulto, imputFull; 
+let master, visa, american, debito, usina1, usina2, teatro, movistar, rural, tresCuota, seisCuota, nueveDuota, doceCuota, menor, adulto, imputFull, cantALD, cantMEN, lugar, card, cardPago, cardTipo, totalALD, totalMEN, resumen; 
 
 ///Defino valores de las entradas
 
 const entradaALD = 800;
 const entradaMEN = 500;
+const cargo = 135;
 
 ///Defino valores de los descuentos de las tarjetas
 
@@ -25,13 +27,13 @@ visa = 0.90;
 american = 0.75;
 debito = 0.60;
 
-///Defino valores de los descuentos de las tarjetas
+///Defino valores de los descuentos de los lugares
 
-usina1 = 0.90;
-usina2 = 0.85;
-teatro = 0.90;
-movistar = 0.95;
-rural = 0.90;
+usina1 = 0.10;
+usina2 = 0.15;
+teatro = 0.10;
+movistar = 0.05;
+rural = 0.10;
 
 ///Defino valores de los recargos
 
@@ -43,31 +45,33 @@ iva = 1.21;
 
 ///Defino los campos
 
-const cantALD = document.querySelector('#entradaALD'); 
-const cantMEN = document.querySelector('#entradaMEN');
-const lugar = document.querySelector('#lugar');
-const card = document.querySelector('#tarjeta');
-const cardTipo = document.querySelector('#tipo');
-const cardPago = document.querySelector('#pago');
-const totalALD = document.querySelector('#totalALD');
-const totalMEN = document.querySelector('#totalMEN');
-const resumen = document.querySelector('#resumen');
+cantALD = document.querySelector('#entradaALD'); 
+cantMEN = document.querySelector('#entradaMEN');
+lugar = document.querySelector('#lugar');
+card = document.querySelector('#tarjeta');
+cardTipo = document.querySelector('#tipo');
+cardPago = document.querySelector('#pago');
+totalALD = document.querySelector('.totalALD');
+totalMEN = document.querySelector('.totalMEN');
+resumen = document.querySelector('#resumen');
 adulto = parseInt(cantALD.value);
 menor = parseInt(cantMEN.value);
 
 ///Funciones
 
-function totalPagar() {
-    let tickALD, tickMEN;
-    
+let totalSubPagoALD = (cantidad, div) => {
+    div.textContent = `Total: $ ${entradaALD* cantidad}`;
+};
 
-}
+let totalSubPagoMEN = (cantidad, div) => {
+    if(cantidad % 2 === 0){
+        div.textContent = `Total: $ ${entradaMEN * cantidad / 2}`;
+    }
+    else{        
+        div.textContent = `Total: $ ${entradaMEN * cantidad / 2 + entradaMEN / 2}`;
+    }
+};
 
-imputFull = (input) => {
-    if (input.value === "") {
-        input.style.borderColor = "red";
-        return true;
-      } else {
-        input.style.borderColor = "green";
-      }
-  };
+cantALD.addEventListener("input", (e) => { totalSubPagoALD(cantALD.value, totalALD);});
+
+cantMEN.addEventListener("input", (e) => { totalSubPagoMEN(cantMEN.value, totalMEN);});

@@ -1031,7 +1031,7 @@ footer {
 
 .campoView .campo-Gral{
     display: grid;
-    grid-template-rows: 20% 35% 35% 10%;
+    grid-template-rows: 20% 35% 23% 17%;
     grid-template-columns: 100%;
 
     background-color: silver;
@@ -1151,7 +1151,7 @@ footer {
 
     .campoView .campo-Gral{
         display: grid;
-        grid-template-rows: 25% 35% 30% 10%;
+        grid-template-rows: 25% 35% 23% 17%;
         grid-template-columns: 100%;
     
         background-color: silver;

@@ -105,13 +105,13 @@
                                     <input id="entradaALD" type="number" required max="10" min="1" placeholder="ADULTO(S)" class="form-control">
                                 </div>
                                 <div class="col-md-3 col-3 columForms">
-                                    <p class="fontTOTAL" id="totalALD">Total: $</p>
+                                    <p class="fontTOTAL totalALD" id="totalALD">Total: $</p>
                                 </div>
                                 <div class="col-md-2 col-2 columForms">
                                     <input id="entradaMEN" type="number" required max="10" min="0" placeholder="MENOR(ES)" class="form-control">
                                 </div>
                                 <div class="col-md-3 col-3 columForms">
-                                    <p class="fontTOTAL" id="totalMEN">Total: $</p>
+                                    <p class="fontTOTAL totalMEN" id="totalMEN">Total: $</p>
                                 </div>
                             </div>
                         </fieldset>
@@ -186,12 +186,12 @@
                                 <h2>Datos de la Tarjeta</h2>
                             </div>
                             <div class="row justify-content-md-center fileForms">
-                                <div class="col-md-7 col-7 columForms">
-                                    <input type="number" class="form-control" required maxlength="16" minlength="1" placeholder="Ingrese Número de Tarjeta"/>
+                                <div class="col-md-6 col-6 columForms">
+                                    <input type="number" class="form-control" required max="9999999999999999" min="1111111111111111" placeholder="Ingrese Número de Tarjeta"/>
                                 </div>
-                                <div class="col-md-4 col-4 columForms">
+                                <div class="col-md-3 col-3 columForms">
                                     <select class="custom-select" required id="tarjeta">
-                                        <option selected></option>
+                                        <option selected>---MARCA---</option>
                                         <option value="1">VISA</option>
                                         <option value="2">MASTERCARD</option>
                                         <option value="3">AMERICAN EXPRESS</option>
@@ -218,21 +218,20 @@
                                 </div>
                                 <div class="col-md-2 col-2 columForms">
                                     <select class="custom-select" required>
-                                        <option selected>--AÑO--</option>
-                                        <option value="1">2023</option>
-                                        <option value="2">2024</option>
-                                        <option value="3">2025</option>
-                                        <option value="4">2026</option>
-                                        <option value="5">2027</option>
-                                        <option value="6">2028</option>
-                                        <option value="7">2029</option>
-                                        <option value="8">2030</option>
-                                        <option value="9">2031</option>
-                                        <option value="10">2032</option>
+                                        <option selected>---AÑO---</option>
+                                        <option value="1">2024</option>
+                                        <option value="2">2025</option>
+                                        <option value="3">2026</option>
+                                        <option value="4">2027</option>
+                                        <option value="5">2028</option>
+                                        <option value="6">2029</option>
+                                        <option value="7">2030</option>
+                                        <option value="8">2031</option>
+                                        <option value="9">2032</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2 col-2 columForms">
-                                    <input type="password" required class="form-control" maxlength="3" min="0" max="999" placeholder="CCV">
+                                    <input id="cvv" type="password" required class="form-control" min="0" max="999" placeholder="CCV">
                                 </div>
                                 <div class="col-md-3 col-3 form-check columForms">
                                     <select class="custom-select" required id="tipo">
@@ -256,17 +255,27 @@
                                 <div class="col-md-11 col-11 columForms">
                                     <input name="name" type="text" required placeholder="Nombre que figura la tarjeta" class="form-control">
                                 </div>
-                                <div class="col-md-11 col-11 justify-content-md-center pad-adjust columFormsCT">
-                                    <input type="checkbox" checked class="text-muted">    ¿Aceptas los <a href="conditions.html">Términos y Condiciones?</a>
-                                </div>
                             </div>
                         </fieldset>
                     </div>
                     <div class="compra-Send">
                         <div class="row justify-content-md-center fileForms">
                             <div class="col-md-3 col-3 pad-adjust">
-                                <button class="btnRESUMEN" onclick="javascript:popUp('resumen.html')">Resumen</button>
-                            </div>
+                                <p class="resumen">ppp</p>
+                            </div>                            
+                        </div>
+                        <div class="row justify-content-md-center fileForms">
+                            <div class="col-md-3 col-3 pad-adjust">
+                                <p class="resumen">ppp</p>
+                            </div>                            
+                        </div>
+                        <div class="row justify-content-md-center fileForms">
+                            <div class="col-md-3 col-3 pad-adjust">
+                                <input type="submit"  class="btn btn-danger" value="RESET" />
+                           </div>
+                           <div class="col-md-3 col-3 pad-adjust">
+                                 <input type="submit"  class="btn btn-warning btn-block" value="COMPRAR AHORA" />
+                           </div>                           
                         </div>
                     </div>
                 </form>
