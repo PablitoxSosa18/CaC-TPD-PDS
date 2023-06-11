@@ -11,7 +11,7 @@ function popUp(URL) {
     window.open(URL, 'Nombre de la ventana', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=1,width=350,height=500,left = 30,top = 50');
 }
 // Inicializo las variables
-let master, visa, american, debito, usina1, usina2, teatro, movistar, rural, tresCuota, seisCuota, nueveDuota, doceCuota, menor, adulto; 
+let master, visa, american, debito, usina1, usina2, teatro, movistar, rural, tresCuota, seisCuota, nueveDuota, doceCuota, menor, adulto, imputFull; 
 
 ///Defino valores de las entradas
 
@@ -62,3 +62,12 @@ function totalPagar() {
     
 
 }
+
+imputFull = (input) => {
+    if (input.value === "") {
+        input.style.borderColor = "red";
+        return true;
+      } else {
+        input.style.borderColor = "green";
+      }
+  };
