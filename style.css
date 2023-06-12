@@ -1128,6 +1128,13 @@ footer {
     padding: 0;
 }
 
+.resumenTOTAL{
+
+    display: inline;
+    color: white;
+    text-align: justify;
+}
+
 @media screen and (max-width: 900px ) {
 
     .price{
@@ -1322,13 +1329,4 @@ footer {
 
 .popUP-E-P .Promociones{
     height: max-content;
-}
-
-/* HTML POPUP RESUMEN*/
-
-.vistaRESUMEN{
-
-    display: inline;
-    color: white;
-    text-align: justify;
 }
