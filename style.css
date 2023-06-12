@@ -1028,10 +1028,9 @@ footer {
     align-items: center;
     overflow: hidden;
 }
-
-.campoView .campo-Gral{
+.campo-Gral{
     display: grid;
-    grid-template-rows: 20% 35% 23% 17%;
+    grid-template-rows: 25% 35% 23% 17%;
     grid-template-columns: 100%;
 
     background-color: silver;
@@ -1072,7 +1071,7 @@ footer {
     height: 30px;
 
     margin: 0;
-    padding: 0;
+    padding: 1;
 }
 
 .campo-Gral .fileForms h2{
@@ -1148,8 +1147,8 @@ footer {
         margin: 0;
         padding: 0;
     }
-
-    .campoView .campo-Gral{
+    
+    .campo-Gral{
         display: grid;
         grid-template-rows: 25% 35% 23% 17%;
         grid-template-columns: 100%;
@@ -1323,4 +1322,13 @@ footer {
 
 .popUP-E-P .Promociones{
     height: max-content;
+}
+
+/* HTML POPUP RESUMEN*/
+
+.vistaRESUMEN{
+
+    display: inline;
+    color: white;
+    text-align: justify;
 }

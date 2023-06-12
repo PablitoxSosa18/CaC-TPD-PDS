@@ -58,7 +58,7 @@
 
         <div class="card-Columns">
             <fieldset class="campoView">
-                <form class="campo-Gral">
+                <form id="formulario" class="campo-Gral">
                     <div class="compra-Place">
                         <fieldset class="campoFecha">        
                             <div class="row justify-content-md-center fileForms">
@@ -70,7 +70,7 @@
                                 </div>
                             </div>  
                             <div class="row form-group justify-content-md-center fileForms">
-                                <div class="col-md-4 col-4 columForms">
+                                <div class="col-md-4 col-4 columForms" required>
                                     <select class="custom-select" required id="lugar">
                                         <option selected>---Seleccione---</option>
                                         <option value="1">Usina del Arte</option>
@@ -135,7 +135,7 @@
                                     <input name="phone" type="text" required placeholder="Teléfono de línea/Celular" class="form-control">
                                 </div>
                                 <div class="col-md-2 col-3 columForms">
-                                    <select class="custom-select">
+                                    <select class="custom-select" required>
                                         <option selected>Pais</option>
                                         <option value="1">Argentina</option>
                                     </select>
@@ -189,7 +189,7 @@
                                 <div class="col-md-6 col-6 columForms">
                                     <input type="number" class="form-control" required max="9999999999999999" min="1111111111111111" placeholder="Ingrese Número de Tarjeta"/>
                                 </div>
-                                <div class="col-md-3 col-3 columForms">
+                                <div class="col-md-5 col-5 columForms">
                                     <select class="custom-select" required id="tarjeta">
                                         <option selected>---MARCA---</option>
                                         <option value="1">VISA</option>
@@ -243,11 +243,6 @@
                                 <div class="col-md-2 col-2 form-check columForms">
                                     <select class="custom-select" required id="pago">
                                         <option selected>---PAGO---</option>
-                                        <option value="1">UN PAGO</option>
-                                        <option value="2">3 CUOTAS</option>
-                                        <option value="3">6 CUOTAS</option>
-                                        <option value="4">9 CUOTAS</option>
-                                        <option value="5">12 CUOTAS</option>
                                     </select>
                                 </div>
                             </div>
@@ -259,24 +254,29 @@
                         </fieldset>
                     </div>
                     <div class="compra-Send">
-                        <div class="row justify-content-md-center fileForms">
-                            <div class="col-md-3 col-3 pad-adjust">
-                                <p class="resumen">ppp</p>
-                            </div>                            
-                        </div>
-                        <div class="row justify-content-md-center fileForms">
-                            <div class="col-md-3 col-3 pad-adjust">
-                                <p class="resumen">ppp</p>
-                            </div>                            
-                        </div>
-                        <div class="row justify-content-md-center fileForms">
-                            <div class="col-md-3 col-3 pad-adjust">
-                                <input type="submit"  class="btn btn-danger" value="RESET" />
-                           </div>
-                           <div class="col-md-3 col-3 pad-adjust">
-                                 <input type="submit"  class="btn btn-warning btn-block" value="COMPRAR AHORA" />
-                           </div>                           
-                        </div>
+                        <fieldset>
+                            <div class="row justify-content-md-center fileForms">
+                                <div class="col-md-11 col-11 pad-adjust">
+                                    <p class="resumen" id="resumenTOTAL"></p>
+                                </div>                            
+                            </div>
+                            <div class="row justify-content-md-center fileForms">
+                                <div class="col-md-2 col-2 pad-adjust">
+                                    <input id="resumenBTN" type="button" value="RESUMEN">
+                                </div>                            
+                            </div>
+                            <div class="row justify-content-md-center fileForms">
+                                <div class="col-md-3 col-3 pad-adjust">
+                               </div>
+                                <div class="col-md-3 col-3 pad-adjust">
+                                    <button id="resetBTN" type="submit">RESET</button>
+                               </div>
+                               <div class="col-md-3 col-3 pad-adjust">
+                                     <button id="comprarBTN" type="submit">COMPRAR</button>
+                               </div>                           
+                            </div>
+
+                        </fieldset>
                     </div>
                 </form>
             </fieldset>
