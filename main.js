@@ -12,9 +12,7 @@ function popUp(URL) {
 }
 
 // Inicializo las variables
-let master, visa, american, debito, usina1, usina2, teatro, movistar, rural, tresCuota, seisCuota, nueveDuota, doceCuota, menor, adulto, imputFull, cantALD, cantMEN, lugarFecha, cards, cardsCuota, cardsTipo, totalALD, totalMEN, resumenTICK; 
-
-var resetBTN, comprarBTN, resumenBTN, formulario;
+var master, visa, american, debito, usina1, usina2, teatro, movistar, rural, tresCuota, seisCuota, nueveDuota, doceCuota, menor, adulto, imputFull, cantALD, cantMEN, lugarCONF, cards, cardsCuota, cardsTipo, totalALD, totalMEN, resumenTICK, resetBTN, comprarBTN, resumenBTN, formulario;
 
 ///Defino valores de las entradas
 
@@ -49,7 +47,7 @@ iva = 1.21;
 
 cantALD = document.querySelector('#entradaALD'); 
 cantMEN = document.querySelector('#entradaMEN');
-lugarFecha = document.querySelector('#lugar');
+lugarCONF = document.querySelector('#lugar');
 cards = document.querySelector('#tarjeta');
 cardsTipo = document.querySelector('#tipo');
 cardsCuota = document.querySelector('#pago');
@@ -64,8 +62,8 @@ formulario = document.querySelector('#formulario');
 ///Funciones
 
 function actualizarSubcategoria() {
-    var tipoSelect = document.getElementById("tipo");
-    var pagoSelect = document.getElementById("pago");
+    var tipoSelect = cardsTipo;
+    var pagoSelect = cardsCuota;
 
     // Limpiar opciones anteriores
     pagoSelect.innerHTML = '<option selected>---PAGO---</option>';
@@ -74,10 +72,10 @@ function actualizarSubcategoria() {
     var categoriaSeleccionada = tipoSelect.value;
 
     // Agregar las opciones correspondientes a la categoría seleccionada
-    if (categoriaSeleccionada === "1") {
+    if (categoriaSeleccionada == "1") {
       // Opciones para la categoría "Debito"
       pagoSelect.innerHTML += '<option value="1">UN PAGO</option>';
-    } if (categoriaSeleccionada === "2") {
+    } if (categoriaSeleccionada == "2") {
       // Opciones para la categoría "Credito"
       pagoSelect.innerHTML += '<option value="1">UN PAGO</option>';
       pagoSelect.innerHTML += '<option value="2">3 CUOTAS</option>';
@@ -89,79 +87,121 @@ function actualizarSubcategoria() {
 
 cardsTipo.addEventListener("click", (e) => { actualizarSubcategoria();});
 
-let totalSubPagoALD = (cantidad, div) => {
+///Imprimo valor de las entradas sin IVA
+
+function totalSubPagoALD (cantidad, div) {
     div.textContent = `Total: $ ${entradaALD * cantidad}`;
 };
 
-let totalSubPagoMEN = (cantidad, div) => {
-    if(cantidad % 2 === 0){
-        div.textContent = `Total: $ ${entradaMEN * cantidad / 2}`;
+function totalSubPagoMEN (cantidad, div) {
+    if(lugarCONF.value == 0) {
+        div.textContent = `Total: $ ${entradaMEN * cantidad}`;
     }
-    else{        
-        div.textContent = `Total: $ ${entradaMEN * cantidad / 2 + entradaMEN / 2}`;
+    else {
+        if(cantidad % 2 == 0){
+            div.textContent = `Total: $ ${entradaMEN * cantidad / 2}`;
+        }
+        else{        
+            div.textContent = `Total: $ ${entradaMEN * cantidad / 2 + entradaMEN / 2}`;
+        }
     }
 };
-
 cantALD.addEventListener("input", (e) => { totalSubPagoALD(cantALD.value, totalALD);});
 cantMEN.addEventListener("input", (e) => { totalSubPagoMEN(cantMEN.value, totalMEN);});
 
-let totalPago = (cantidadALD, cantidadMEN, lugar, tarjeta, tipo, cuota, div) => {
-    var subPagoALD, subPagoMEN, precioTICK, subTotal, subTotalCuotas, parResumen;
-    subPagoALD = entradaALD * cantidadALD;
-    if(cantMEN.value % 2 === 0){
-        subPagoMEN = entradaMEN * cantidadMEN / 2;
+function totalPagoEntrada () {
+    var entradaTotal, entradaAlduto, entradaMenor;
+    entradaAlduto = entradaALD * cantALD.value;
+    if(lugarCONF.value == 0) {
+        entradaMenor = entradaMEN * cantMEN.value;
     }
-    else{        
-        subPagoMEN = entradaMEN * cantidadMEN / 2 + entradaMEN / 2;
+    else {
+        if(cantMEN.value % 2 == 0){
+            entradaMenor = entradaMEN * cantMEN.value / 2;
+        }
+        else{        
+            entradaMenor = entradaMEN * cantMEN.value / 2 + entradaMEN / 2;
+        }
     }
-    precioTICK = (subPagoALD + subPagoMEN) * iva;
-    if ( tipo === 1 && cuota === 1) {
+    entradaTotal = (entradaAlduto + entradaMenor) * iva;
+    return entradaTotal;
+}; 
+
+function toPrintPlace(lugar) {
+    if( lugar.value == 1) {
+        return 'USINA DEL ARTE';
+    }
+    else if( lugar.value == 2) {
+        return 'TEATRO COLON';
+    }
+    else if( lugar.value == 3) {
+        return ('MOVISTAR ARENA') ;
+    }
+    else if( lugar.value == 4) {
+        return 'LA RURAL';
+    }
+    else {
+        return 'NO HAY LUGAR';
+    }
+
+function totalPago () {
+    var precioTICK, subTotal, subTotalCuotas, lugar, tarjeta, tipo, cuota, div;
+    //
+    precioTICK = totalPagoEntrada;
+    lugar = lugarCONF.value;
+    tarjeta = cards.value;
+    tipo = cardsTipo.value;
+    cuota = cardsCuota.value;
+    div = resumenTICK.value;
+
+    if ( tipo == 1 && cuota == 1) {
         subTotal = precioTICK * debito + cargo;
-        div.innerHTML = `Total de entradas + IVA es: $ ${precioTICK} + cargo de admicion de $ ${cargo}, eligiendo UN PAGO con la tarjeta ${tarjeta} - ${tipo}, se aplico un descuento del ${debito * 100}%. Siendo un monto total de: \$${subTotal}`;
-        console.log("FUNCA");
+        div = `Total de entradas + IVA es: $ ${precioTICK} + cargo de admicion de $ ${cargo}, eligiendo UN PAGO con la tarjeta ${tarjeta} - ${tipo}, se aplico un descuento del ${debito * 100}%. Siendo un monto total de: \$${subTotal}`;
     } 
-    if ( lugar === 1 && tarjeta === 1 && tipo === 2 && cuota === 1 ) {
+    if ( lugar == 1 && tarjeta == 1 && tipo == 2 && cuota == 1 ) {
         subTotal = precioTICK * (visa - usina2);
         div.innerHTML = `Total de entradas + IVA es: $ ${precioTICK} + cargo de admisión de $ ${cargo}, eligiendo UN PAGO con la tarjeta de crédito ${tarjeta}, se aplico un descuento del ${visa * 100}%, mas aplicando un descuento por asistir en ${lugar}, siendo del ${usina2 * 100}%. Con un monto total de: \$${subTotal}`;
     }
-    if ( lugar === 1 && tarjeta === 3 && tipo === 2 && cuota === 1 ) {
+    if ( lugar == 1 && tarjeta == 3 && tipo == 2 && cuota == 1 ) {
         subTotal = precioTICK * (american - usina1) + cargo;
         div.innerHTML = `Total de entradas + IVA es: $ ${precioTICK} + cargo de admisión de $ ${cargo}, eligiendo UN PAGO con la tarjeta de crédito ${tarjeta}, se aplico un descuento del ${american * 100}%, mas aplicando un descuento por asistir en ${lugar}, siendo del ${usina1 * 100}%. Con un monto total de: \$${subTotal}`;
     }
-    if ( lugar === 2 && tarjeta === 3 && tipo === 2 && cuota === 1 ) {
+    if ( lugar == 2 && tarjeta == 3 && tipo == 2 && cuota == 1 ) {
         subTotal = precioTICK * (american - teatro) + cargo;
         div.innerHTML = `Total de entradas + IVA es: $ ${precioTICK} + cargo de admisión de $ ${cargo}, eligiendo UN PAGO con la tarjeta de crédito ${tarjeta}, se aplico un descuento del ${american * 100}%, mas aplicando un descuento por asistir en ${lugar}, siendo del ${teatro * 100}%. Con un monto total de: \$${subTotal}`;
     }
-    if ( lugar === 3 && tarjeta === 2 && tipo === 2 && cuota === 1 ) {
+    if ( lugar == 3 && tarjeta == 2 && tipo == 2 && cuota == 1 ) {
         subTotal = precioTICK * (master - movistar) + cargo;
         div.innerHTML = `Total de entradas + IVA es: $ ${precioTICK} + cargo de admisión de $ ${cargo}, eligiendo UN PAGO con la tarjeta de crédito ${tarjeta}, se aplico un descuento del ${master * 100}%, mas aplicando un descuento por asistir en ${lugar}, siendo del ${movistar * 100}%. Con un monto total de: \$${subTotal}`;
     }
-    if ( lugar === 4 && tarjeta === 1 && tipo === 2 && cuota === 1 ) {
+    if ( lugar == 4 && tarjeta == 1 && tipo == 2 && cuota == 1 ) {
         subTotal = precioTICK * (visa - rural) + cargo;
         div.innerHTML = `Total de entradas + IVA es: $ ${precioTICK} + cargo de admisión de $ ${cargo}, eligiendo UN PAGO con la tarjeta de crédito ${tarjeta}, se aplico un descuento del ${visa * 100}%, mas aplicando un descuento por asistir en ${lugar}, siendo del ${usina2 * 100}%. Con un monto total de: \$${subTotal}`;
     }
-    if (cuota === 2){
+    if (cuota == 2){
         subTotal = precioTICK * tresCuota + cargo;
         subTotalCuotas = subTotal / tresCuota;
         div.innerHTML = `Total de entradas + IVA es: $ ${precioTICK} + cargo de admisión de $ ${cargo}, eligiendo ${cuota} con la tarjeta de crédito ${tarjeta}, se aplico un descuento del un recargo del ${tresCuota * 100 - 100}%. Siendo un monto total de: \$${subTotal}, pagando en ${cuota} de ${subTotalCuotas}`;
     }
-    if (cuota === 3){
+    if (cuota == 3){
         subTotal = precioTICK * seisCuota + cargo;
         subTotalCuotas = subTotal / seisCuota;
         div.innerHTML = `Total de entradas + IVA es: $ ${precioTICK} + cargo de admisión de $ ${cargo}, eligiendo ${cuota} con la tarjeta de crédito ${tarjeta}, se aplico un descuento del un recargo del ${seisCuota * 100 - 100}%. Siendo un monto total de: \$${subTotal}, pagando en ${cuota} de ${subTotalCuotas}`;
     }
-    if (cuota === 4){
+    if (cuota == 4){
         subTotal = precioTICK * nueveDuota + cargo;
         subTotalCuotas = subTotal / nueveDuota;
         div.innerHTML = `Total de entradas + IVA es: $ ${precioTICK} + cargo de admisión de $ ${cargo}, eligiendo ${cuota} con la tarjeta de crédito ${tarjeta}, se aplico un descuento del un recargo del ${nueveDuota * 100 - 100}%. Siendo un monto total de: \$${subTotal}, pagando en ${cuota} de ${subTotalCuotas}`;
     }
-    if (cuota === 5){
+    if (cuota == 5){
         subTotal = precioTICK * doceCuota + cargo;
         subTotalCuotas = subTotal / doceCuota;
         div.innerHTML = `Total de entradas + IVA es: $ ${precioTICK} + cargo de admisión de $ ${cargo}, eligiendo ${cuota} con la tarjeta de crédito ${tarjeta}, se aplico un descuento del un recargo del ${doceCuota * 100 - 100}%. Siendo un monto total de: \$${subTotal}, pagando en ${cuota} de ${subTotalCuotas}`;
     }
 
+    return div;
+
 };
 
 
-resumenBTN.addEventListener("click", (e) => {totalPago(cantALD, cantMEN, lugarFecha, cards, cardsTipo, cardsCuota, resumenTICK);});
+resumenBTN.addEventListener("click", (e) => {totalPago();});
