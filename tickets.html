@@ -80,19 +80,19 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3 col-3 columForms">
-                                    <select class="custom-select" required>
-                                        <option selected>---Fecha---</option>
-                                        <option value="1">04/06/2023</option>
-                                        <option value="2">06/06/2023</option>
-                                        <option value="3">08/06/2023</option>
-                                        <option value="5">10/06/2023</option>
-                                        <option value="6">12/06/2023</option>
-                                        <option value="7">14/06/2023</option>
+                                    <select id="fecha" class="custom-select" required>
+                                        <option value="0">---Fecha---</option>
+                                        <option value="1">11/06/2023</option>
+                                        <option value="2">13/06/2023</option>
+                                        <option value="3">15/06/2023</option>
+                                        <option value="5">17/06/2023</option>
+                                        <option value="6">19/06/2023</option>
+                                        <option value="7">21/06/2023</option>
                                     </select>
                                 </div>
                                 <div class="col-md-3 col-3 columForms">
-                                    <select class="custom-select" required>
-                                        <option selected>---Hora---</option>
+                                    <select id="hora" class="custom-select" required>
+                                        <option value="0">---Hora---</option>
                                         <option value="1">15:30 HS</option>
                                         <option value="2">17:30 HS</option>
                                         <option value="3">19:30 HS</option>
@@ -123,26 +123,26 @@
                             </div>    
                             <div class="row form-group justify-content-md-center fileForms">
                                 <div class="col-md-6 col-6 columForms">
-                                    <input name="name" type="text" required placeholder="Nombre(s)" class="form-control">
+                                    <input id="nombre" name="name" type="text" required placeholder="Nombre(s)" class="form-control">
                                 </div>
                                 <div class="col-md-5 col-5 columForms">
-                                    <input name="name" type="text" required placeholder="Apellido(s)" class="form-control">
+                                    <input id="apellido" name="name" type="text" required placeholder="Apellido(s)" class="form-control">
                                 </div>
                                 <div class="col-md-6 col-6 columForms">
-                                    <input name="email" type="text" required placeholder="Correo Electrónico" class="form-control">
+                                    <input id="email" name="email" type="text" required placeholder="Correo Electrónico" class="form-control">
                                 </div>
                                 <div class="col-md-5 col-5 columForms">
-                                    <input name="phone" type="text" required placeholder="Teléfono de línea/Celular" class="form-control">
+                                    <input id="phone" name="phone" type="text" required placeholder="Teléfono de línea/Celular" class="form-control">
                                 </div>
                                 <div class="col-md-2 col-3 columForms">
-                                    <select class="custom-select" required>
-                                        <option selected>Pais</option>
+                                    <select id="pais" class="custom-select" required>
+                                        <option value="0">Pais</option>
                                         <option value="1">Argentina</option>
                                     </select>
                                 </div>
                                 <div class="col-md-3 col-5 columForms">
-                                    <select class="custom-select" required>
-                                        <option selected>---Provincia---</option>
+                                    <select id="provincia" class="custom-select" required>
+                                        <option value="0">---Provincia---</option>
                                         <option value="1">CABA</option>
                                         <option value="2">Buenos Aires</option>
                                         <option value="3">Catamarca</option>
@@ -169,13 +169,13 @@
                                     </select>
                                 </div>
                                 <div class="col-md-2 col-3 columForms">
-                                    <input type="number" class="form-control" required id="zip_id" name="Código Postal" placeholder="#####">
+                                    <input id="codigoPostal" type="number" class="form-control" required id="zip_id" name="Código Postal" placeholder="#####">
                                 </div>
                                 <div class="col-md-6 col-6 columForms">
-                                    <input name="city_id" type="city_id" required placeholder="Ciudad/Barrio(CABA)" class="form-control">
+                                    <input id="ciudad" name="city_id" type="city_id" required placeholder="Ciudad/Barrio(CABA)" class="form-control">
                                 </div>
                                 <div class="col-md-5 col-5 columForms">
-                                    <input type="text" class="form-control" required name="street" placeholder="Calle, Altura, Manzana, Edificio, Piso, etc.">
+                                    <input id="calle" type="text" class="form-control" required name="street" placeholder="Calle, Altura, Manzana, Edificio, Piso, etc.">
                                 </div>
                             </div>    
                         </fieldset> 
@@ -187,11 +187,11 @@
                             </div>
                             <div class="row justify-content-md-center fileForms">
                                 <div class="col-md-6 col-6 columForms">
-                                    <input type="number" class="form-control" required max="9999999999999999" min="1111111111111111" placeholder="Ingrese Número de Tarjeta"/>
+                                    <input id="numberCards" type="number" class="form-control" required max="9999999999999999" min="1111111111111111" placeholder="Ingrese Número de Tarjeta"/>
                                 </div>
                                 <div class="col-md-5 col-5 columForms">
                                     <select class="custom-select" required id="tarjeta">
-                                        <option selected>---MARCA---</option>
+                                        <option value="0">---MARCA---</option>
                                         <option value="1">VISA</option>
                                         <option value="2">MASTERCARD</option>
                                         <option value="3">AMERICAN EXPRESS</option>
@@ -200,8 +200,8 @@
                             </div>
                             <div class="row justify-content-md-center fileForms">
                                 <div class="col-md-2 col-2 columForms">
-                                    <select class="custom-select" required>
-                                        <option selected>---MES---</option>
+                                    <select id="mes" class="custom-select" required>
+                                        <option value="0">---MES---</option>
                                         <option value="1">01</option>
                                         <option value="2">02</option>
                                         <option value="3">03</option>
@@ -217,8 +217,8 @@
                                     </select>
                                 </div>
                                 <div class="col-md-2 col-2 columForms">
-                                    <select class="custom-select" required>
-                                        <option selected>---AÑO---</option>
+                                    <select id="anio" class="custom-select" required>
+                                        <option value="0">---AÑO---</option>
                                         <option value="1">2024</option>
                                         <option value="2">2025</option>
                                         <option value="3">2026</option>
@@ -235,20 +235,20 @@
                                 </div>
                                 <div class="col-md-3 col-3 form-check columForms">
                                     <select class="custom-select" required id="tipo">
-                                        <option selected>---TIPO---</option>
+                                        <option value="0">---TIPO---</option>
                                         <option value="1">Debito</option>
                                         <option value="2">Credito</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2 col-2 form-check columForms">
                                     <select class="custom-select" required id="cuotas">
-                                        <option selected>---PAGO---</option>
+                                        <option value="0">---PAGO---</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="row justify-content-md-center fileForms">
                                 <div class="col-md-11 col-11 columForms">
-                                    <input name="name" type="text" required placeholder="Nombre que figura la tarjeta" class="form-control">
+                                    <input id="nameCard" name="name" type="text" required placeholder="Nombre que figura la tarjeta" class="form-control">
                                 </div>
                             </div>
                         </fieldset>

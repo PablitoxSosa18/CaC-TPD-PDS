@@ -12,7 +12,7 @@ function popUp(URL) {
 }
 
 // Inicializo las variables
-var master, visa, american, debito, usina1, usina2, teatro, movistar, rural, tresCuota, seisCuota, nueveDuota, doceCuota, menor, adulto, imputFull, cantALD, cantMEN, lugarCONF, cards, cardsCuota, cardsTipo, totalALD, totalMEN, resumenTICK, resetBTN, comprarBTN, resumenBTN, formulario;
+var master, visa, american, debito, usina1, usina2, teatro, movistar, rural, tresCuota, seisCuota, nueveDuota, doceCuota, menor, adulto, imputFull, cantALD, cantMEN, lugarCONF, cards, cardsCuota, cardsTipo, totalALD, totalMEN, resumenTICK, resetBTN, comprarBTN, resumenBTN, formulario, nombreCompador, apellidoCompador, emailComprador, selectFecha, selectHora, selectPais, selectProvinicia, selectMesCard, selectAnioCard, telefono, codigoPostal, ciudad, calle, cvvCards, nameCard;
 
 ///Defino valores de las entradas
 
@@ -50,14 +50,29 @@ cantMEN = document.querySelector('#entradaMEN');
 lugarCONF = document.querySelector('#lugar');
 cards = document.querySelector('#tarjeta');
 cardsTipo = document.querySelector('#tipo');
-cardsCuota = document.querySelector('#pago');
+cardsCuota = document.querySelector('#cuotas');
 totalALD = document.querySelector('.totalALD');
 totalMEN = document.querySelector('.totalMEN');
 resumenTICK = document.querySelector('.resumenTOTAL');
 resetBTN = document.querySelector('#resetBTN');
-resumenBTN = document.querySelector('#resumenBTN');
+resumenBTN = document.querySelector('.resumenBTN');
 comprarBTN = document.querySelector('#comprarBTN');
 formulario = document.querySelector('#formulario');
+nombreCompador = document.querySelector('#nombre');
+apellidoCompador = document.querySelector('#apellido');
+emailComprador = document.querySelector('#email');
+selectFecha = document.querySelector('#fecha'); 
+selectHora = document.querySelector('#hora'); 
+selectPais = document.querySelector('#pais'); 
+selectProvinicia = document.querySelector('#provincia'); 
+selectMesCard = document.querySelector('#mes'); 
+selectAnioCard = document.querySelector('#anio');
+telefono = document.querySelector('#phone')
+codigoPostal = document.querySelector('#codigoPostal')
+ciudad = document.querySelector('#ciudad')
+calle = document.querySelector('#calle')
+cvvCards = document.querySelector('#cvv')
+nameCard = document.querySelector('#nameCard')
 
 ///Funciones
 
@@ -87,6 +102,51 @@ function actualizarSubcategoria() {
 
 cardsTipo.addEventListener("click", (e) => { actualizarSubcategoria();});
 
+function inputVacios (input) {
+if (input.value != "") {
+    input.style.borderColor = "green";
+} else {
+    input.style.borderColor = "red";
+}
+};
+
+
+function selectVacios (select) {
+if (select.value != 0) {
+    select.style.borderColor = "green";
+} else {
+    select.style.borderColor = "red";
+}
+};
+
+function advertenciaColor(){
+    selectVacios(selectFecha); 
+    selectVacios(selectHora); 
+    selectVacios(selectPais); 
+    selectVacios(selectProvinicia); 
+    selectVacios(selectMesCard); 
+    selectVacios(selectAnioCard); 
+    selectVacios(lugarCONF); 
+    selectVacios(cards); 
+    selectVacios(cardsTipo); 
+    selectVacios(cardsCuota); 
+    inputVacios(telefono);
+    inputVacios(codigoPostal);
+    inputVacios(ciudad);
+    inputVacios(calle);
+    inputVacios(cvvCards);
+    inputVacios(nameCard);
+    inputVacios(cards);
+    inputVacios(nombreCompador)
+    inputVacios(apellidoCompador);
+    inputVacios(emailComprador);
+    inputVacios(cantALD);
+    inputVacios(cantMEN);
+}
+
+resumenBTN.addEventListener("click", (e) => {advertenciaColor();})
+
+
 ///Imprimo valor de las entradas sin IVA
 
 function totalSubPagoALD (cantidad, div) {
@@ -106,8 +166,10 @@ function totalSubPagoMEN (cantidad, div) {
         }
     }
 };
-cantALD.addEventListener("input", (e) => { totalSubPagoALD(cantALD.value, totalALD);});
-cantMEN.addEventListener("input", (e) => { totalSubPagoMEN(cantMEN.value, totalMEN);});
+cantALD.addEventListener("input", (e) => {totalSubPagoALD(cantALD.value, totalALD);});
+
+cantMEN.addEventListener("input", (e) => {totalSubPagoALD(cantMEN.value, totalMEN);});
+
 
 function totalPagoEntrada () {
     var entradaTotal, entradaAlduto, entradaMenor;
@@ -124,35 +186,155 @@ function totalPagoEntrada () {
         }
     }
     entradaTotal = (entradaAlduto + entradaMenor) * iva;
+    /* console.log(entradaTotal); */
     return entradaTotal;
 }; 
 
 function toPrintPlace(lugar) {
+    var place;
     if( lugar.value == 1) {
-        return 'USINA DEL ARTE';
+        place = 'USINA DEL ARTE';
+        return place;
     }
     else if( lugar.value == 2) {
-        return 'TEATRO COLON';
+        place = 'TEATRO COLON';
+        return place;
     }
     else if( lugar.value == 3) {
-        return ('MOVISTAR ARENA') ;
+        place = 'MOVISTAR ARENA';
+        return place;
     }
     else if( lugar.value == 4) {
-        return 'LA RURAL';
+        place = 'LA RURAL';
+        return place;
     }
     else {
-        return 'NO HAY LUGAR';
+        place = 'NO HAY LUGAR SELECCIONADO';
+        return place;
+    } }
+
+function toPrintHora(fecha){
+    var date;
+    if(fecha == 1){
+        date = '11/06/2023';
+        return date;
     }
+    else if(fecha == 2){
+        date = '13/06/2023';
+        return date;
+
+    }
+    else if(fecha == 3){
+        date = '15/06/2023';
+        return date;
+
+    }
+    else if(fecha == 4){
+        date = '17/06/2023';
+        return date;
+    }
+    else if(fecha == 5){
+        date = '19/06/2023';
+        return date;
+    }
+    else if(fecha == 6){
+        date = '21/06/2023';
+        return date;
+    }
+    else {
+        date = 'NO HAY FECHA SELECCIONADA';
+        return date;
+    }
+}
+
+function toPrintFecha(hora){
+    var hour;
+    if(hora == 1){
+        hour = '15:30 HS';
+        return hour;
+    }
+    else if(hora == 2){
+        hour = '17:30 HS';
+        return hour;
+
+    }
+    else if(hora == 3){
+        hour = '19:30 HS';
+        return hour;
+
+    }
+    else if(hora == 4){
+        hour = '21:30 HS';
+        return hour;
+    }
+    else {
+        date = 'NO HAY UN HORARIO SELECCIONADO';
+        return hour;
+    }
+}
+
+function dateComprador(){
+    var name = nombreCompador.value; 
+    var surName = apellidoCompador.value; 
+    var correo = emailComprador.value;
+    if(name != '' && surName != '' & correo != ''){
+        var div = `Sr./Sra. ${name} ${surName} se le envio el resumen al siguiente email ${correo}`;
+        console.log(div);
+        return div;
+    }
+    else if(name != '' && surName == '' && correo == ''){
+        var div = `Por favor ingrese un Apellido & un E-MAIL`;
+        console.log(div);
+        return div;
+    }
+    else if(name == '' && surName != '' && correo == ''){
+        var div = `Por favor ingrese un Nombre & un E-MAIL`;
+        console.error(div);
+        return div;
+    }
+    else if(name == '' && surName == '' && correo != ''){
+        var div = `Por favor ingrese un Nombre y un Apellido`;
+        console.log(div);
+        return div;
+    }
+    else if(name != '' && surName != '' && correo == ''){
+        var div = `Por favor ingrese un E-MAIL`;
+        console.log(div);
+        return div;
+    }
+    else if(name != '' && surName == '' && correo != ''){
+        var div = `Por favor ingrese un Apellido`;
+        console.log(div);
+        return div;
+    }
+    else if(name == '' && surName != '' && correo != ''){
+        var div = `Por favor ingrese un Nombre`;
+        console.log(div);
+        return div;
+    }
+    else {
+        var div = `Por favor ingrese todos los campos requerido`;
+        console.log(div);
+        return div;
+    }
+
+}
+
+resumenBTN.addEventListener("click", (e) => {dateComprador();});
+
+function msjSalida(lugar, tarjeta, tipo, cuota, div) {
+
+}
 
 function totalPago () {
     var precioTICK, subTotal, subTotalCuotas, lugar, tarjeta, tipo, cuota, div;
     //
-    precioTICK = totalPagoEntrada;
+    precioTICK = totalPagoEntrada();
     lugar = lugarCONF.value;
     tarjeta = cards.value;
     tipo = cardsTipo.value;
     cuota = cardsCuota.value;
-    div = resumenTICK.value;
+    div = resumenTICK;
 
     if ( tipo == 1 && cuota == 1) {
         subTotal = precioTICK * debito + cargo;
@@ -204,4 +386,4 @@ function totalPago () {
 };
 
 
-resumenBTN.addEventListener("click", (e) => {totalPago();});
+resumenBTN.addEventListener("click", (e) => {totalPago();})
