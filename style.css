@@ -1016,196 +1016,6 @@ footer {
 
 }
 
-/* HTML TICKETS */
-
-.price{
-    display: grid;
-    grid-template-rows: 100%;
-    grid-template-columns: 65% 35%;
-    
-
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-.campo-Gral{
-    display: grid;
-    grid-template-rows: 25% 35% 23% 17%;
-    grid-template-columns: 100%;
-
-    background-color: silver;
-    
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-
-    margin: 0px;
-    padding: 0px;
-}
-
-.campo-Gral .compra-Place{  
-    
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-
-    height: 100%;
-
-    margin: 0;
-    padding: 0;
-}
-
-.compra-Place .entradas{
-    text-decoration: none;
-    font-size: 20px;
-}
-
-.campo-Gral .fileForms{
-    height: 30px;
-
-    margin: 0;
-    padding: 1;
-}
-
-.campo-Gral .columForms{
-    height: 30px;
-
-    margin: 0;
-    padding: 1;
-}
-
-.campo-Gral .fileForms h2{
-    font-size: 25px;
-    text-align: center;
-
-    margin: 0;
-    padding: 0;
-}
-
-.campo-Gral .compra-Date{ 
-    display: flex;
-    
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-   
-    height: 100%;
-
-    margin: 0;
-    padding: 0;
-}
-
-.compra-Date .campoDatos{
-    background-color: aquamarine;
-    border: 5px;
-
-    margin: 1px;
-    padding: 1px;
-    border-radius: 5px;
-    border-style: double;
-}
-
-.price .img-Columns{
-    display: grid;
-    grid-template-rows: repeat(2,50%);
-    grid-template-columns: repeat(2,50%);
-
-    margin: 0;
-    padding: 0;
-}
-
-.img-Columns .columIMG{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    object-fit: none;
-
-    margin: 0;
-    padding: 0;
-}
-
-.resumenTOTAL{
-
-    display: inline;
-    color: white;
-    text-align: justify;
-}
-
-@media screen and (max-width: 900px ) {
-
-    .price{
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 85% auto;
-        
-        justify-content: center;
-        align-items: center;
-    }
-
-    .price .img-Columns{
-        display: grid;
-        grid-template-rows: 100%;
-        grid-template-columns: repeat(4,25%);
-    
-        margin: 0;
-        padding: 0;
-    }
-    
-    .campo-Gral{
-        display: grid;
-        grid-template-rows: 25% 35% 23% 17%;
-        grid-template-columns: 100%;
-    
-        background-color: silver;
-        
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    
-        margin: 0px;
-        padding: 0px;
-    }
-
-    .campo-Gral .fileForms{
-        height: 30px;
-    
-        margin: 1px;
-        padding: 1px;
-    }
-    
-    .campo-Gral .columForms{
-        height: 30px;
-    
-        margin: 1px;
-        padding: 1px;
-    }
-
-    .compra-Place .entradas{
-        text-decoration: none;
-        font-size: 18px;
-    }
-    
-    .img-Columns .columIMG{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-
-        width: 100%;
-        height: 25%;
-        transition: transform 1.2s; 
-    }
-     
-    .columIMG:hover {
-        transform: translate(0, -180%);
-    }
-    
-}
-
 /* HTML CONFERENCIAS */
 
 .conference{
@@ -1315,7 +1125,248 @@ footer {
 
 }
 
-/* HTML POPUP*/
+/* HTML TICKETS */
+
+.price{
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 65% 35%;
+    
+
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.campo-Gral{
+    display: grid;
+    grid-template-rows: 20% 30% 20% 30%;
+    grid-template-columns: 100%;
+
+    background-color: silver;
+    
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+.campo-Gral .compra-Place{  
+    
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+.compra-Place .entradas{
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.campo-Gral .fileForms{
+    height: 30px;
+
+    margin: 0;
+    padding: 1;
+}
+
+.campo-Gral .columForms{
+    height: 30px;
+
+    margin: 0;
+    padding: 1;
+}
+
+.campo-Gral .fileForms h2{
+    font-size: 25px;
+    text-align: center;
+
+    margin: 0;
+    padding: 0;
+}
+
+.campo-Gral .compra-Date{ 
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+   
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+.compra-Date .campoDatos{
+    background-color: aquamarine;
+    border: 5px;
+
+    margin: 1px;
+    padding: 1px;
+    border-radius: 5px;
+    border-style: double;
+}
+
+.price .img-Columns{
+    display: grid;
+    grid-template-rows: repeat(2,50%);
+    grid-template-columns: repeat(2,50%);
+
+    margin: 0;
+    padding: 0;
+}
+
+.img-Columns .columIMG{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.campo-Gral .compra-Send {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 80% 10%;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+
+}
+
+.compra-Send .columnFormsBuy1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    height: max-content;
+    font-size: 14px;
+}
+
+.compra-Send .columnFormsBuy2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+}
+
+.compra-Send .botonGRALRCR {
+    display: flex;
+
+    padding: 5px;
+    margin: 5px;
+    border: 5px;
+    cursor: pointer;
+
+    border-radius: 5px;
+}
+
+.compra-Send .botonStyleVIEW {
+    background-color: darkgoldenrod;
+    color: white;
+}
+
+.botonStyleVIEW a {
+    text-decoration: none;
+    color: white;
+}
+
+.compra-Send .botonStyleRES {
+    background-color: darkblue;
+    color: white;
+}
+
+.compra-Send .botonStyleBUY {
+    background-color: darkgreen;
+}
+
+@media screen and (max-width: 900px ) {
+
+    .price{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 85% auto;
+        
+        justify-content: center;
+        align-items: center;
+    }
+
+    .price .img-Columns{
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: repeat(4,25%);
+    
+        margin: 0;
+        padding: 0;
+    }
+    
+    .campo-Gral{
+        display: grid;
+        grid-template-rows: 23% 32% 20% 25%;
+        grid-template-columns: 100%;
+    
+        background-color: silver;
+        
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .campo-Gral .fileForms{
+        height: 30px;
+    
+        margin: 1px;
+        padding: 1px;
+    }
+    
+    .campo-Gral .columForms{
+        height: 30px;
+    
+        margin: 1px;
+        padding: 1px;
+    }
+
+    .compra-Place .entradas{
+        text-decoration: none;
+        font-size: 18px;
+    }
+    
+    .img-Columns .columIMG{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        width: 100%;
+        height: 25%;
+        transition: transform 1.2s; 
+    }
+     
+    .columIMG:hover {
+        transform: translate(0, -180%);
+    }
+    
+}
+
+/* HTML POPUP ENTRADAS & PROMOCIONES*/
 
 .popUP-E-P{
     display: inline;
@@ -1329,4 +1380,30 @@ footer {
 
 .popUP-E-P .Promociones{
     height: max-content;
+}
+
+/* HTML POPUP RESUMEN*/
+
+.popupResumen{
+    display: inline;
+    text-align: justify;
+}
+
+.popupResumen .styleResumen{
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.styleResumen .tittleResumen{
+    height: max-content;
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.styleResumen .totalResumen{
+    margin-top: 0;
 }

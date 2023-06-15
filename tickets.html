@@ -66,12 +66,12 @@
                             </div>      
                             <div class="row form-group justify-content-md-center fileForms">                                
                                 <div class="col-md-6 col-10 columForms">
-                                    <a class="entradas" href="javascript:popUp('popup.html')">Valor de entradas y Promociones</a>
+                                    <a class="entradas" href="javascript:popUp('popup_Entrada_&_Promo.html')">Valor de entradas y Promociones</a>
                                 </div>
                             </div>  
                             <div class="row form-group justify-content-md-center fileForms">
                                 <div class="col-md-4 col-4 columForms" required>
-                                    <select class="custom-select" required id="lugar">
+                                    <select class="custom-select" required id="lugarConferencia">
                                         <option value="0">---Seleccione---</option>
                                         <option value="1">Usina del Arte</option>
                                         <option value="2">Teatro Colon</option>
@@ -80,7 +80,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3 col-3 columForms">
-                                    <select id="fecha" class="custom-select" required>
+                                    <select id="fechaConferencia" class="custom-select" required>
                                         <option value="0">---Fecha---</option>
                                         <option value="1">11/06/2023</option>
                                         <option value="2">13/06/2023</option>
@@ -91,7 +91,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3 col-3 columForms">
-                                    <select id="hora" class="custom-select" required>
+                                    <select id="horaConferencia" class="custom-select" required>
                                         <option value="0">---Hora---</option>
                                         <option value="1">15:30 HS</option>
                                         <option value="2">17:30 HS</option>
@@ -190,7 +190,7 @@
                                     <input id="numberCards" type="number" class="form-control" required max="9999999999999999" min="1111111111111111" placeholder="Ingrese Número de Tarjeta"/>
                                 </div>
                                 <div class="col-md-5 col-5 columForms">
-                                    <select class="custom-select" required id="tarjeta">
+                                    <select class="custom-select" required id="tarjetaMarca">
                                         <option value="0">---MARCA---</option>
                                         <option value="1">VISA</option>
                                         <option value="2">MASTERCARD</option>
@@ -200,7 +200,7 @@
                             </div>
                             <div class="row justify-content-md-center fileForms">
                                 <div class="col-md-2 col-2 columForms">
-                                    <select id="mes" class="custom-select" required>
+                                    <select id="tarjetaMes" class="custom-select" required>
                                         <option value="0">---MES---</option>
                                         <option value="1">01</option>
                                         <option value="2">02</option>
@@ -217,7 +217,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-2 col-2 columForms">
-                                    <select id="anio" class="custom-select" required>
+                                    <select id="tarjetaAnio" class="custom-select" required>
                                         <option value="0">---AÑO---</option>
                                         <option value="1">2024</option>
                                         <option value="2">2025</option>
@@ -231,17 +231,17 @@
                                     </select>
                                 </div>
                                 <div class="col-md-2 col-2 columForms">
-                                    <input id="cvv" type="password" required class="form-control" min="0" max="999" placeholder="CCV">
+                                    <input id="tarjetaCVV" type="password" required class="form-control" min="0" max="999" placeholder="CCV">
                                 </div>
                                 <div class="col-md-3 col-3 form-check columForms">
-                                    <select class="custom-select" required id="tipo">
+                                    <select class="custom-select" required id="tarjetaTipo">
                                         <option value="0">---TIPO---</option>
                                         <option value="1">Debito</option>
                                         <option value="2">Credito</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2 col-2 form-check columForms">
-                                    <select class="custom-select" required id="cuotas">
+                                    <select class="custom-select" required id="tarjetaCuotas">
                                         <option value="0">---PAGO---</option>
                                     </select>
                                 </div>
@@ -254,29 +254,25 @@
                         </fieldset>
                     </div>
                     <div class="compra-Send">
-                        <fieldset>
-                            <div class="row justify-content-md-center fileForms">
-                                <div class="col-md-11 col-11 pad-adjust">
-                                    <p class="resumenTOTAL" id="resumenTOTAL"></p>
-                                </div>                            
+                        <div class="row justify-content-md-center fileFormsBuy">
+                            <div class="col-md-11 col-11 pad-adjust columnFormsBuy1">
+                                <p id="totalResumenTitle" class="totalResumenTitle"></p>
+                            </div>        
+                            <div class="col-md-11 col-11 pad-adjust columnFormsBuy1">
+                                <p id="totalResumen" class="totalResumen"></p>
+                            </div>                
+                        </div>
+                        <div class="row justify-content-md-center fileFormsBuy">
+                            <div class="col-md-4 col-4 pad-adjust columnFormsBuy2">
+                                <input id="resumenBTN" class="botonStyleVIEW botonGRALRCR" type="button" value="Ver Resumen">                    
                             </div>
-                            <div class="row justify-content-md-center fileForms">
-                                <div class="col-md-2 col-2 pad-adjust">
-                                    <input id="resumenBTN" class="resumenBTN" type="button" value="RESUMEN">
-                                </div>                            
-                            </div>
-                            <div class="row justify-content-md-center fileForms">
-                                <div class="col-md-3 col-3 pad-adjust">
-                               </div>
-                                <div class="col-md-3 col-3 pad-adjust">
-                                    <button id="resetBTN" type="submit">RESET</button>
-                               </div>
-                               <div class="col-md-3 col-3 pad-adjust">
-                                     <button id="comprarBTN" type="submit">COMPRAR</button>
-                               </div>                           
-                            </div>
-
-                        </fieldset>
+                            <div class="col-md-3 col-3 pad-adjust columnFormsBuy2">
+                                <button id="resetBTN" class="botonStyleRES botonGRALRCR" type="submit">RESET</button>
+                           </div>
+                           <div class="col-md-4 col-4 pad-adjust columnFormsBuy2">
+                                 <button id="comprarBTN" class="botonStyleBUY botonGRALRCR" type="submit">COMPRAR</button>
+                           </div>  
+                        </div>  
                     </div>
                 </form>
             </fieldset>
