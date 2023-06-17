@@ -97,6 +97,11 @@ function actualizarSubcategoria() {
   }
 }
 
+function resetearCampos() {
+    // Restablecer todos los campos de entrada y selección
+    formulario.reset();
+  }
+
 cardsTipo.addEventListener("click", (e) => { actualizarSubcategoria();});
 
 function inputVacios (input) {
