@@ -1238,10 +1238,22 @@ footer {
     padding: 0;
 }
 
+.campo-Gral .compra-Cards{  
+    
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    height: max-content;
+
+    margin: 0;
+    padding: 0;
+}
+
 .campo-Gral .compra-Send {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 80% 10%;
+    grid-template-rows: 2fr 1fr;
     align-items: center;
     justify-content: center;
 
@@ -1256,7 +1268,6 @@ footer {
     justify-content: center;
     text-align: justify;
     height: max-content;
-    font-size: 14px;
 }
 
 .compra-Send .columnFormsBuy2 {
@@ -1264,6 +1275,14 @@ footer {
     align-items: center;
     justify-content: center;
     height: 35px;
+}
+
+.compra-Send .totalResumenTitle {
+    font-size: 18px;
+}
+
+.compra-Send .totalResumen {
+    font-size: 14px;
 }
 
 .compra-Send .botonGRALRCR {
@@ -1327,8 +1346,8 @@ footer {
         align-items: center;
         overflow: hidden;
     
-        margin: 0px;
-        padding: 0px;
+        margin: 1%;
+        padding: 1px;
     }
 
     .campo-Gral .fileForms{
@@ -1363,6 +1382,34 @@ footer {
      
     .columIMG:hover {
         transform: translate(0, -180%);
+    }
+
+    .campo-Gral .compra-Send {
+        overflow: scroll;
+    
+    }
+
+    .compra-Send .columnFormsBuy1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+        height: max-content;
+    }
+    
+    .compra-Send .columnFormsBuy2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 35px;
+    }
+    
+    .compra-Send .totalResumenTitle {
+        font-size: 14px;
+    }
+    
+    .compra-Send .totalResumen {
+        font-size: 12px;
     }
     
 }

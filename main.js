@@ -97,12 +97,49 @@ function actualizarSubcategoria() {
   }
 }
 
+cardsTipo.addEventListener("click", (e) => { actualizarSubcategoria();});
+
 function resetearCampos() {
     // Restablecer todos los campos de entrada y selección
     formulario.reset();
-  }
+}
 
-cardsTipo.addEventListener("click", (e) => { actualizarSubcategoria();});
+function soloNumerosCVV(event) {
+    var charCode = event.which ? event.which : event.keyCode;
+    if (charCode < 48 || charCode > 57) {
+      event.preventDefault();
+      return false;
+    }
+    return true;
+}
+
+function limitarLongitudCVV() {
+    if (cvvCards.value.length > 3) {
+        cvvCards.value = cvvCards.value.slice(0, 3);
+    }
+}
+
+function formatearTarjeta() {
+  var valor = numberCards.value;
+
+  // Eliminar cualquier carácter que no sea un número
+  valor = valor.replace(/\D/g, '');
+
+  // Insertar guiones después de cada grupo de 4 dígitos
+  valor = valor.replace(/(\d{4})(?=\d)/g, '$1-');
+
+  // Actualizar el valor del campo
+  numberCards.value = valor;
+}
+
+function soloNumerosTarjeta(event) {
+    var charCode = event.which ? event.which : event.keyCode;
+    if (charCode < 48 || charCode > 57) {
+      event.preventDefault();
+      return false;
+    }
+    return true;
+}
 
 function inputVacios (input) {
     const mensaje = 'Por favor, selecciona una opción en el select.';
@@ -152,7 +189,7 @@ function advertenciaColorInput(){
     inputVacios(cantMEN);
 }
 
-/* resumenBTN.addEventListener("click", (e) => {advertenciaColorInput(); advertenciaColorSelect()})*/
+comprarBTN.addEventListener("click", (e) => {advertenciaColorInput(); advertenciaColorSelect()})
 
 ///Imprimo valor de las entradas sin IVA
 function totalSubPagoALD (cantidad, div) {
@@ -480,49 +517,49 @@ function totalPago () {
     totalEntrada = parseInt(cantALD.value) + parseInt(cantMEN.value);
         
     ///SI PAGARIAS CON DEBITO
-    if ( descuentoPorDebito(cardsTipo, cardsCuota) == 1 && descuentoPorLugar(selectLugar, cards, cardsTipo, cardsCuota) == 0) {
+    if ( descuentoPorDebito(cardsTipo, cardsCuota) == 1 && descuentoPorLugar(selectLugar, cards, cardsTipo, cardsCuota) == 0 && advertenciaColorInput && advertenciaColorSelect) {
         subTotal = precioTICK * debito + cargo;
         resumTotalTittle.textContent = `${dateComprador()}`;
         resumTotal.textContent = `Usted realizo la compro de ${cantEntALD} entrada(s) para adulto(s) Y/O ${cantEntMEN} entrada(s) para menor(es), siento un total ${totalEntrada} de entradas para ${toPrintPlace(selectLugar)}, el día ${toPrintFecha(selectFecha)}, en el horario ${toPrintHora(selectHora)}. Con un montón de $ ${precioTICK} (Incluyendo IVA), adicionando un cargo de admisión de $ ${cargo}, siendo un monto total de $ ${precioTICK + cargo}. La cual realizo la compra con la tarjeta ${toPrintCards(cards)} - ${toPrintCardsTipo(cardsTipo)}, se aplicó un descuento del ${100 - debito * 100}%. Siendo un monto total abonar de $ ${subTotal}`;
     }
     ///SI ES LA USINA Y VISA, SE DEBERIA APLICAR ESTE DESCUENTO
-    else if ( descuentoPorDebito(cardsTipo, cardsCuota) == 0 && descuentoPorLugar(selectLugar, cards, cardsTipo, cardsCuota) == 1) {
+    else if ( descuentoPorDebito(cardsTipo, cardsCuota) == 0 && descuentoPorLugar(selectLugar, cards, cardsTipo, cardsCuota) == 1 && advertenciaColorInput && advertenciaColorSelect) {
         subTotal = precioTICK * (visa - usina2) + cargo;
         resumTotalTittle.textContent = `${dateComprador()}`;
         resumTotal.textContent = `Usted realizo la compro de ${cantEntALD} entrada(s) para adulto(s) Y/O ${cantEntMEN} entrada(s) para menor(es), siento un total ${totalEntrada} de entradas para ${toPrintPlace(selectLugar)}, el día ${toPrintFecha(selectFecha)}, en el horario ${toPrintHora(selectHora)}. Con un montón de $ ${precioTICK} (Incluyendo IVA), adicionando un cargo de admisión de $ ${cargo}, siendo un monto total de $ ${precioTICK + cargo}. La cual realizo la compra en UN SOLO PAGO con la tarjeta ${toPrintCards(cards)}, se aplicó un descuento del ${100 - visa * 100}%, además se le adiciono un descuento del ${usina2 * 100}%, siendo un total del ${100 - visa * 100 + usina2 * 100}%. Siendo un monto total abonar de $ ${subTotal}`;
     }
     ///SI ES LA USINA Y AMERICAN, SE DEBERIA APLICAR ESTE DESCUENTO
-    else if ( descuentoPorDebito(cardsTipo, cardsCuota) == 0 && descuentoPorLugar(selectLugar, cards, cardsTipo, cardsCuota) == 2) {
+    else if ( descuentoPorDebito(cardsTipo, cardsCuota) == 0 && descuentoPorLugar(selectLugar, cards, cardsTipo, cardsCuota) == 2 && advertenciaColorInput && advertenciaColorSelect) {
         subTotal = precioTICK * (american - usina1) + cargo;
         resumTotalTittle.textContent = `${dateComprador()}`;
         resumTotal.textContent = `Usted realizo la compro de ${cantEntALD} entrada(s) para adulto(s) Y/O ${cantEntMEN} entrada(s) para menor(es), siento un total ${totalEntrada} de entradas para ${toPrintPlace(selectLugar)}, el día ${toPrintFecha(selectFecha)}, en el horario ${toPrintHora(selectHora)}. Con un montón de $ ${precioTICK} (Incluyendo IVA), adicionando un cargo de admisión de $ ${cargo}, siendo un monto total de $ ${precioTICK + cargo}. La cual realizo la compra en UN SOLO PAGO con la tarjeta ${toPrintCards(cards)}, se aplicó un descuento del ${100 - american * 100}%, además se le adiciono un descuento del ${usina1 * 100}%, siendo un total del ${100 - visa * 100 + usina1 * 100}%. Siendo un monto total abonar de $ ${subTotal}`;
     }
     ///SI ES EL TEATRO Y AMERICAN, SE DEBERIA APLICAR ESTE DESCUENTO
-    else if ( descuentoPorDebito(cardsTipo, cardsCuota) == 0 && descuentoPorLugar(selectLugar, cards, cardsTipo, cardsCuota) == 3) {
+    else if ( descuentoPorDebito(cardsTipo, cardsCuota) == 0 && descuentoPorLugar(selectLugar, cards, cardsTipo, cardsCuota) == 3 && advertenciaColorInput && advertenciaColorSelect) {
         subTotal = precioTICK * (american - teatro) + cargo;
         resumTotalTittle.textContent = `${dateComprador()}`;
         resumTotal.textContent = `Usted realizo la compro de ${cantEntALD} entrada(s) para adulto(s) Y/O ${cantEntMEN} entrada(s) para menor(es), siento un total ${totalEntrada} de entradas para ${toPrintPlace(selectLugar)}, el día ${toPrintFecha(selectFecha)}, en el horario ${toPrintHora(selectHora)}. Con un montón de $ ${precioTICK} (Incluyendo IVA), adicionando un cargo de admisión de $ ${cargo}, siendo un monto total de $ ${precioTICK + cargo}. La cual realizo la compra en UN SOLO PAGO con la tarjeta ${toPrintCards(cards)}, se aplicó un descuento del ${100 - american * 100}%, además se le adiciono un descuento del ${teatro * 100}%, siendo un total del ${100 - visa * 100 + teatro * 100}%. Siendo un monto total abonar de $ ${subTotal}`;
     }
     ///SI ES MOVISTAR Y MASTER, SE DEBERIA APLICAR ESTE DESCUENTO
-    else if ( descuentoPorDebito(cardsTipo, cardsCuota) == 0 && descuentoPorLugar(selectLugar, cards, cardsTipo, cardsCuota) == 4) {
+    else if ( descuentoPorDebito(cardsTipo, cardsCuota) == 0 && descuentoPorLugar(selectLugar, cards, cardsTipo, cardsCuota) == 4 && advertenciaColorInput && advertenciaColorSelect) {
         subTotal = precioTICK * (master - movistar) + cargo;
         resumTotalTittle.textContent = `${dateComprador()}`;
         resumTotal.textContent = `Usted realizo la compro de ${cantEntALD} entrada(s) para adulto(s) Y/O ${cantEntMEN} entrada(s) para menor(es), siento un total ${totalEntrada} de entradas para ${toPrintPlace(selectLugar)}, el día ${toPrintFecha(selectFecha)}, en el horario ${toPrintHora(selectHora)}. Con un montón de $ ${precioTICK} (Incluyendo IVA), adicionando un cargo de admisión de $ ${cargo}, siendo un monto total de $ ${precioTICK + cargo}. La cual realizo la compra en UN SOLO PAGO con la tarjeta ${toPrintCards(cards)}, se aplicó un descuento del ${100 - master * 100}%, además se le adiciono un descuento del ${movistar * 100}%, siendo un total del ${100 - master * 100 + movistar * 100}%. Siendo un monto total abonar de $ ${subTotal}`;
     }
     ///////SI ES LA RURAL Y VISA, SE DEBERIA APLICAR ESTE DESCUENTO
-    else if ( descuentoPorDebito(cardsTipo, cardsCuota) == 0 && descuentoPorLugar(selectLugar, cards, cardsTipo, cardsCuota) == 5) {
+    else if ( descuentoPorDebito(cardsTipo, cardsCuota) == 0 && descuentoPorLugar(selectLugar, cards, cardsTipo, cardsCuota) == 5 && advertenciaColorInput && advertenciaColorSelect) {
         subTotal = precioTICK * (visa - usina2) + cargo;
         resumTotalTittle.textContent = `${dateComprador()}`;
         resumTotal.textContent = `Usted realizo la compro de ${cantEntALD} entrada(s) para adulto(s) Y/O ${cantEntMEN} entrada(s) para menor(es), siento un total ${totalEntrada} de entradas para ${toPrintPlace(selectLugar)}, el día ${toPrintFecha(selectFecha)}, en el horario ${toPrintHora(selectHora)}. Con un montón de $ ${precioTICK} (Incluyendo IVA), adicionando un cargo de admisión de $ ${cargo}, siendo un monto total de $ ${precioTICK + cargo}. La cual realizo la compra en UN SOLO PAGO con la tarjeta ${toPrintCards(cards)}, se aplicó un descuento del ${100 - visa * 100}%, además se le adiciono un descuento del ${usina2 * 100}%, siendo un total del ${100 - visa * 100 + usina2 * 100}%. Siendo un monto total abonar de $ ${subTotal}`;
     }
     ////SI PAGAS EN UN PAGO Y NO POSEES DESCUENTOS, NO DEBIA APLICAR ESTOS DESCUENTOS
-    else if ( descuentoPorDebito(cardsTipo, cardsCuota) == 0 && descuentoPorLugar(selectLugar, cards, cardsTipo, cardsCuota) == 6) {
+    else if ( descuentoPorDebito(cardsTipo, cardsCuota) == 0 && descuentoPorLugar(selectLugar, cards, cardsTipo, cardsCuota) == 6 && advertenciaColorInput && advertenciaColorSelect) {
         subTotal = precioTICK + cargo;
         resumTotalTittle.textContent = `${dateComprador()}`;
         resumTotal.textContent = `Usted realizo la compro de ${cantEntALD} entrada(s) para adulto(s) Y/O ${cantEntMEN} entrada(s) para menor(es), siento un total ${totalEntrada} de entradas para ${toPrintPlace(selectLugar)}, el día ${toPrintFecha(selectFecha)}, en el horario ${toPrintHora(selectHora)}. Con un montón de $ ${precioTICK} (Incluyendo IVA), adicionando un cargo de admisión de $ ${cargo}, siendo un monto total de $ ${precioTICK + cargo}. La cual realizo la compra en UN SOLO PAGO con la tarjeta ${toPrintCards(cards)}. Siendo un monto total abonar de $ ${subTotal}`;
     }
     ////SI PAGAS EN UN CUOTAS
-    else if ( descuentoPorDebito(cardsTipo, cardsCuota) == 0 && descuentoPorLugar(selectLugar, cards, cardsTipo, cardsCuota) == 7) {
+    else if ( descuentoPorDebito(cardsTipo, cardsCuota) == 0 && descuentoPorLugar(selectLugar, cards, cardsTipo, cardsCuota) == 7 && advertenciaColorInput && advertenciaColorSelect) {
         subTotal = precioTICK * recargPorCuotas(cardsCuota) + cargo;
         tarjetaCuotas = subTotal / valorCuotas(cardsCuota);
         resumTotalTittle.textContent = `${dateComprador()}`;
@@ -530,7 +567,9 @@ function totalPago () {
     }
     else {
         resumTotalTittle.textContent = `${dateComprador()}`;
-        resumTotal.textContent = `Verifica la cargar de los datos`
+        resumTotal.textContent = `Verifica la cargar de los datos`;
+        advertenciaColorInput(); 
+        advertenciaColorSelect();
     }
 
     return resumTotal;

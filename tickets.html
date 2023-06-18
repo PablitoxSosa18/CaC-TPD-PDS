@@ -183,13 +183,13 @@
                     <div class="compra-Cards">   
                         <fieldset>        
                             <div class="row justify-content-md-center fileForms">
-                                <h2>Datos de la Tarjeta</h2>
+                                <h2 class="tituloCardCompra">Datos de la Tarjeta</h2>
                             </div>
                             <div class="row justify-content-md-center fileForms">
-                                <div class="col-md-6 col-6 columForms">
-                                    <input id="numberCards" type="number" class="form-control" required max="9999999999999999" min="1111111111111111" placeholder="Ingrese Número de Tarjeta"/>
-                                </div>
                                 <div class="col-md-5 col-5 columForms">
+                                    <input id="numberCards" type="text" class="form-control" required maxlength="19" oninput="formatearTarjeta()" onkeypress="return soloNumerosTarjeta(event)" placeholder="Ingrese Número de Tarjeta"/>
+                                </div>
+                                <div class="col-md-4 col-4 columForms">
                                     <select class="custom-select" required id="tarjetaMarca">
                                         <option value="0">---MARCA---</option>
                                         <option value="1">VISA</option>
@@ -197,11 +197,18 @@
                                         <option value="3">AMERICAN EXPRESS</option>
                                     </select>
                                 </div>
+                                <div class="col-md-2 col-2 form-check columForms">
+                                    <select class="custom-select" required id="tarjetaTipo">
+                                        <option value="0">---TIPO---</option>
+                                        <option value="1">Debito</option>
+                                        <option value="2">Credito</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="row justify-content-md-center fileForms">
                                 <div class="col-md-2 col-2 columForms">
                                     <select id="tarjetaMes" class="custom-select" required>
-                                        <option value="0">---MES---</option>
+                                        <option value="0">--MES--</option>
                                         <option value="1">01</option>
                                         <option value="2">02</option>
                                         <option value="3">03</option>
@@ -218,7 +225,7 @@
                                 </div>
                                 <div class="col-md-2 col-2 columForms">
                                     <select id="tarjetaAnio" class="custom-select" required>
-                                        <option value="0">---AÑO---</option>
+                                        <option value="0">--AÑO--</option>
                                         <option value="1">2024</option>
                                         <option value="2">2025</option>
                                         <option value="3">2026</option>
@@ -230,17 +237,10 @@
                                         <option value="9">2032</option>
                                     </select>
                                 </div>
-                                <div class="col-md-2 col-2 columForms">
-                                    <input id="tarjetaCVV" type="password" required class="form-control" min="0" max="999" placeholder="CCV">
+                                <div class="col-md-3 col-3 columForms">
+                                    <input id="tarjetaCVV" type="password" required oninput="limitarLongitudCVV()" onkeypress="return soloNumerosCVV(event)">
                                 </div>
                                 <div class="col-md-3 col-3 form-check columForms">
-                                    <select class="custom-select" required id="tarjetaTipo">
-                                        <option value="0">---TIPO---</option>
-                                        <option value="1">Debito</option>
-                                        <option value="2">Credito</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-2 col-2 form-check columForms">
                                     <select class="custom-select" required id="tarjetaCuotas">
                                         <option value="0">---PAGO---</option>
                                     </select>
@@ -255,10 +255,10 @@
                     </div>
                     <div class="compra-Send">
                         <div class="row justify-content-md-center fileFormsBuy">
-                            <div class="col-md-11 col-11 pad-adjust columnFormsBuy1">
+                            <div class="col-md-11 col-11 pad-adjust columnFormsBuy1 columnFormsBuyRESP1">
                                 <p id="totalResumenTitle" class="totalResumenTitle"></p>
                             </div>        
-                            <div class="col-md-11 col-11 pad-adjust columnFormsBuy1">
+                            <div class="col-md-11 col-11 pad-adjust columnFormsBuy1 columnFormsBuyRESP2 ">
                                 <p id="totalResumen" class="totalResumen"></p>
                             </div>                
                         </div>
